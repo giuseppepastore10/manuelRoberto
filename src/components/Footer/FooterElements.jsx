@@ -25,11 +25,10 @@ export const SocialMediaWrap = styled.div`
 	justify-content: space-between;
 	align-items: left;
 	max-width: 1100px;
-	margin: 16px auto 0 auto;
+	margin: 0px auto 0 auto;
+	flex-direction: column;
 
-	@media screen and (max-width: 820px) {
-		flex-direction: column;
-	} ;
+	
 `;
 
 export const SocialLogo = styled(Link)`
@@ -40,23 +39,31 @@ export const SocialLogo = styled(Link)`
 	font-size: 1.5rem;
 	display: flex;
 	align-items: center;
-	margin-bottom: 16px;
 	font-weight: bold;
+
+	margin-bottom: 1rem;
+
+	p {
+		font-weight: normal;
+		font-size: 0.7rem;
+	}
 `;
 
 export const SocialIcons = styled.div`
 	display: flex;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	align-items: center;
 	width: 240px;
+	margin-bottom: 1rem;
 
-	@media screen and (max-width: 820px) {
-		justify-content: flex-start;
-	} ;
 `;
+
+
 
 export const SocialIconLink = styled.a`
 	color: #fff;
-	font-size: 24px;
+	font-size: ${props => props.fontSize || "24px"};
 	padding: 0px 5px 0px 5px;
+	
+
 `;

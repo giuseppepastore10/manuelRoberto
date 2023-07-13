@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     #mainContainer{
-        padding: 5rem;
+        padding: 3rem;
         background-color: #000000;
     }
 `;

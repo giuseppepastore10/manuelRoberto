@@ -28,6 +28,7 @@ import feedback3 from "./images/feedbacks/feedback3.png";
 import giuseppe from "./images/front.png";
 import { default as manuelRoberto2 } from "./images/manuelRoberto2.jpeg";
 import marco from "./images/marco.png";
+import Products from "./components/Products/Products";
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -105,7 +106,17 @@ function App() {
         <Hero onBook={handleClick} />
       </div>
       <div id="mainContainer">
-        <SentencePage id="chisono">
+        <div style={{ opacity: !isScrolled ? 0 : 1 }}>
+          <PopupWidget
+            ref={popupRef}
+            url="https://calendly.com/giuseppe-pastore/schedule"
+            rootElement={document.getElementById("root")}
+            text="Contattami"
+            textColor="#ffffff"
+            color="#e31837"
+          />
+        </div>
+        <SentencePage>
           <div
             style={{
               display: "flex",
@@ -131,17 +142,8 @@ function App() {
             </ProductsTitle>
           </div>
         </SentencePage>
-        <div style={{ opacity: !isScrolled ? 0 : 1 }}>
-          <PopupWidget
-            ref={popupRef}
-            url="https://calendly.com/giuseppe-pastore/schedule"
-            rootElement={document.getElementById("root")}
-            text="Contattami"
-            textColor="#ffffff"
-            color="#e31837"
-          />
-        </div>
-        <PhotoPage img={manuelRoberto2}>
+
+        <PhotoPage id="chisono" img={manuelRoberto2}>
           <div
             style={{
               display: "flex",
@@ -169,7 +171,7 @@ function App() {
             </ProductsInfo>
           </div>
         </PhotoPage>
-        <SentencePage id="allenamento">
+        <SentencePage id="coaching">
           <div style={{ display: "flex", flexDirection: "column" }}>
             <ProductsHeading marginBottom={"0rem"}>
               Allenati con me!
@@ -191,7 +193,7 @@ function App() {
             stessa dedizione e professionalità. Scegliendo il coaching online,
             avrai l'opportunità di ottenere risultati straordinari con la
             flessibilità che si adatta al tuo stile di vita.
-            {/* <Products heading="Coaching" data={onlineCoaching} /> */}
+            <Products heading="Coaching" data={onlineCoaching} />
             {/* Per questo puoi
             allenarti con me in presenza sia partecipando a uno dei miei corsi
             sia prenotando la tua seduta personal dedicata. In alternativa, puoi
@@ -237,7 +239,7 @@ function App() {
             cui mi ritengo fiero.
           </div>
         </SentencePage>
-        <PhotoPage heading={"Chi sono"} left={true} img={giuseppe}>
+        <PhotoPage left={true} img={giuseppe}>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <HeroH2 textAlign="left">Il percorso in front di Giuseppe</HeroH2>
             <ProductsInfo textAlign="left">
@@ -258,7 +260,7 @@ function App() {
             </ProductsInfo>
           </div>
         </PhotoPage>
-        <PhotoPage heading={"Chi sono"} img={marco}>
+        <PhotoPage img={marco}>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <HeroH2 textAlign="right">
               Il percorso di Marco nel Muscle Up
@@ -276,7 +278,7 @@ function App() {
             </ProductsInfo>
           </div>
         </PhotoPage>
-        <PhotoPage heading={"Chi sono"} left={true} img={giuseppe}>
+        <PhotoPage left={true} img={giuseppe}>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <HeroH2 textAlign="left">Il percorso di Marco nel Muscle Up</HeroH2>
 
@@ -292,7 +294,7 @@ function App() {
             </ProductsInfo>
           </div>
         </PhotoPage>
-        <SentencePage id="successo">
+        <SentencePage id="diconoDiMe">
           <div style={{ display: "flex", flexDirection: "column" }}>
             <ProductsHeading marginBottom={"1rem"}>
               Dicono di me
@@ -317,7 +319,7 @@ function App() {
                     height: "100%",
                   }}
                 >
-                  <img style={{ width: "60%" }} src={x} />
+                  <img style={{ width: "60%", borderRadius: "2rem" }} src={x} />
                 </div>
               ))}
             </Carousel>

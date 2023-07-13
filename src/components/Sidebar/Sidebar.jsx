@@ -8,6 +8,8 @@ import {
 	SideBtnWrap,
 	SidebarRoute,
 } from './SideBarElements';
+import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { SocialIconLink, SocialIcons } from '../Footer/FooterElements';
 
 function Sidebar({ isOpen, toggle }) {
 	return (
@@ -17,8 +19,39 @@ function Sidebar({ isOpen, toggle }) {
 			</Icon>
 			<SidebarMenu>
 				<SidebarLink href='#chisono'>Chi sono</SidebarLink>
-				<SidebarLink href='#allenamento'>Il mio metodo di allenamento</SidebarLink>
+				<SidebarLink href='#coaching'>Allenati con me</SidebarLink>
 				<SidebarLink href='#successo'>Storie di successo</SidebarLink>
+				<SidebarLink href='#diconoDiMe'>Dicono di me</SidebarLink>
+				<div style={{width:"100%", display:'flex',marginTop: "2rem",justifyContent:'center', alignItems:'center'}}>
+				
+							<SocialIconLink
+								href='https://www.facebook.com/manuel.roberto.22'
+								target='_blank'
+								aria-label='Facebook'
+								rel='noopener noreferrer'
+							>
+								<FaFacebook />
+							</SocialIconLink>
+							
+							<SocialIconLink
+								href='https://www.instagram.com/manuelroberto.calisthenics/'
+								target='_blank'
+								aria-label='Instagram'
+								rel='noopener noreferrer'
+							>
+								<FaInstagram />
+							</SocialIconLink>
+							<SocialIconLink
+								href='https://api.whatsapp.com/send?phone=3318479926&text=Ciao Manuel"'
+								target='_blank'
+								aria-label='Whatsapp'
+								rel='noopener noreferrer'
+							>
+								<FaWhatsapp />
+							</SocialIconLink>
+							
+				
+						</div>
 			</SidebarMenu>
 			{/* <SideBtnWrap>
 				<SidebarRoute to='/'>Order Now</SidebarRoute>

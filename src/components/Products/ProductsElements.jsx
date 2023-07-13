@@ -13,6 +13,11 @@ export const ProductsWrapper = styled.div`
 	justify-content: center;
 	margin: 0 auto;
 	min-height: 20rem;
+
+	@media screen and (max-width: 1200px) {
+		flex-direction: column;
+	  }
+	
 `;
 
 export const ProductsCard = styled.div`

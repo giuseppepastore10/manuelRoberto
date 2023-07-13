@@ -3,7 +3,7 @@ import { ContentContainer, FeatureContainer, ImageContainer } from './PhotoPageE
 
 function PhotoPage(props) {
 	return (
-		<FeatureContainer id={props.id}>
+		<FeatureContainer id={props.id} reverse={props.left}>
 		
 			
 				

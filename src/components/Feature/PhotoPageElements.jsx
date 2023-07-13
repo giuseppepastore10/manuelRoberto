@@ -10,13 +10,10 @@ export const ImageContainer = styled.div`
   img {
     object-fit: contain;
     width: 80%;
-    border-radius: 3rem; 
+    border-radius: 1rem; 
   }
 
-  @media screen and (min-width: 600px) {
-    height: auto;
-    max-width: 50%;
-  }
+  
 `;
 
 export const ContentContainer = styled.div`
@@ -25,6 +22,8 @@ export const ContentContainer = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 60vh;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   
   
 `;
@@ -53,5 +52,11 @@ padding-bottom:3rem;
 		margin-bottom: 1rem;
 		font-size: clamp(1rem, 2vw, 2rem);
 	}
+
+  @media screen and (max-width: 900px) {
+    flex-direction: ${props => props.reverse?'column-reverse':'column'};
+  }
+
+
 `;
 

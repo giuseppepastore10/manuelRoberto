@@ -15,6 +15,7 @@ import {
 	SocialLogo,
 	SocialIcons,
 	SocialIconLink,
+	FooterPrivacy,
 } from './FooterElements';
 
 function Footer() {
@@ -53,7 +54,35 @@ function Footer() {
 							</SocialIconLink>
 							
 						</SocialIcons>
-						
+						<SocialIcons>
+							<SocialIconLink
+									href='https://www.facebook.com/manuel.roberto.22'
+									target='_blank'
+									aria-label='Facebook'
+									rel='noopener noreferrer'
+									fontSize="8px"
+								>
+								Termini e condizioni
+								</SocialIconLink>
+								<SocialIconLink
+									href='https://www.facebook.com/manuel.roberto.22'
+									target='_blank'
+									aria-label='Facebook'
+									rel='noopener noreferrer'
+									fontSize="8px"
+								>
+								Privacy policy
+								</SocialIconLink>
+								<SocialIconLink
+									href='https://www.facebook.com/manuel.roberto.22'
+									target='_blank'
+									aria-label='Facebook'
+									rel='noopener noreferrer'
+									fontSize="8px"
+								>
+								Cookie policy
+								</SocialIconLink>
+						</SocialIcons>
 					</SocialMediaWrap>
 				</SocialMedia>
 			</FooterWrap>
