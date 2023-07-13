@@ -25,16 +25,16 @@ function Products({ heading, data,left,imgs }) {
 							
 						</ProductsCard>
 						
-						<ProductsCard key={index}>
+						<ProductsCard  key={index}>
 							
-							<ProductsInfo fontSize="clamp(1rem, 2.5vw, 1.2rem)" textAlign="center">
+							<ProductsInfo zeroMargin fontSize="clamp(1rem, 2.5vw, 1.2rem)" textAlign="center">
 								{product.title}
 								
 								
 								
 							</ProductsInfo>
 						</ProductsCard>
-						<ProductsCard key={index}>
+						<ProductsCard zeroMargin key={index}>
 							
 							<ProductsInfo fontSize="clamp(1rem, 2.5vw, 1.2rem)" textAlign="center">
 								

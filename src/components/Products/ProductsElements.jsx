@@ -23,10 +23,11 @@ export const ProductsWrapper = styled.div`
 export const ProductsCard = styled.div`
 	margin: 0 2rem;
 	line-height: 2;
-	width: 300px;
 	display:flex;
 	flex-direction: column;
 	justify-content: center;
+
+	
 
 `;
 
@@ -57,9 +58,14 @@ export const ProductsInfo = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
 	min-height: 8rem;
 	font-size: ${props => props.fontSize || ''}; 
 	text-align: ${props => props.textAlign || 'left'};
+
+	@media screen and (max-width: 1200px) {
+		min-height: ${props => props.zeroMargin? '0':"8rem"};
+	  }
 `;
 
 export const ProductsDesc = styled.p`

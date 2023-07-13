@@ -172,7 +172,13 @@ function App() {
           </div>
         </PhotoPage>
         <SentencePage id="coaching">
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            style={{
+              display: "flex",
+
+              flexDirection: "column",
+            }}
+          >
             <ProductsHeading marginBottom={"0rem"}>
               Allenati con me!
             </ProductsHeading>

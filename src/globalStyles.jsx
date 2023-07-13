@@ -10,6 +10,12 @@ export const GlobalStyle = createGlobalStyle`
 
     #mainContainer{
         padding: 3rem;
-        background-color: #000000;
+        background-color: #000000;  
+        overflow-x: hidden;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+
     }
+
 `;
