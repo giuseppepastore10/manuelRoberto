@@ -18,10 +18,10 @@ function Sidebar({ isOpen, toggle }) {
 				<CloseIcon />
 			</Icon>
 			<SidebarMenu>
-				<SidebarLink href='#chisono'>Chi sono</SidebarLink>
-				<SidebarLink href='#coaching'>Allenati con me</SidebarLink>
-				<SidebarLink href='#successo'>Storie di successo</SidebarLink>
-				<SidebarLink href='#diconoDiMe'>Dicono di me</SidebarLink>
+				<SidebarLink onClick={toggle} href='#chisono'>Chi sono</SidebarLink>
+				<SidebarLink onClick={toggle} href='#coaching'>Allenati con me</SidebarLink>
+				<SidebarLink onClick={toggle} href='#successo'>Storie di successo</SidebarLink>
+				<SidebarLink onClick={toggle} href='#diconoDiMe'>Dicono di me</SidebarLink>
 				<div style={{width:"100%", display:'flex',marginTop: "2rem",justifyContent:'center', alignItems:'center'}}>
 				
 							<SocialIconLink
