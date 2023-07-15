@@ -45,7 +45,7 @@ function Footer() {
 								<FaInstagram />
 							</SocialIconLink>
 							<SocialIconLink
-								href='https://api.whatsapp.com/send?phone=3318479926&text=Ciao Manuel"'
+								href='https://api.whatsapp.com/send?phone=3318479926&text=Ciao Manuel, vorrei prenotare una chiamata conoscitiva con te. Quando saresti disponibile?'
 								target='_blank'
 								aria-label='Whatsapp'
 								rel='noopener noreferrer'

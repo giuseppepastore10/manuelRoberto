@@ -30,15 +30,58 @@ import { default as manuelRoberto2 } from "./images/manuelRoberto2.jpeg";
 import marco from "./images/marco.png";
 import Products from "./components/Products/Products";
 
+import chiSono from "./images/main/chiSono.jpg";
+import copertina from "./images/main/copertina.jpg";
+import corsiInPresenza from "./images/main/corsiInPresenza.jpg";
+import sedutePersonal from "./images/main/sedutePersonal.jpg";
+import { SocialIconLink } from "./components/Footer/FooterElements";
+import { FaWhatsapp } from "react-icons/fa";
+import ImageGallery from "react-image-gallery";
+import "react-gallery-carousel/dist/index.css";
+
+import uno from "./images/gallery/1.jpg";
+import due from "./images/gallery/2.jpg";
+import tre from "./images/gallery/3.jpg";
+import quattro from "./images/gallery/4.jpg";
+import cinque from "./images/gallery/5.jpg";
+import sei from "./images/gallery/6.jpg";
+import sette from "./images/gallery/7.jpg";
+import otto from "./images/gallery/8.jpg";
+import nove from "./images/gallery/9.jpg";
+import dieci from "./images/gallery/10.jpg";
+import undici from "./images/gallery/11.jpg";
+import dodici from "./images/gallery/12.jpg";
+import tredici from "./images/gallery/13.jpg";
+
+const images = [
+  uno,
+  due,
+  tre,
+  quattro,
+  cinque,
+  sei,
+  sette,
+  otto,
+  nove,
+  dieci,
+  undici,
+  dodici,
+  tredici,
+];
+
+const whatsappLink =
+  "https://api.whatsapp.com/send?phone=3318479926&text=Ciao Manuel, vorrei prenotare una chiamata conoscitiva con te. Quando saresti disponibile?";
+
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const popupRef = useRef(null);
 
   const handleClick = () => {
     console.log("Popup ref: ", popupRef.current);
-    if (popupRef.current) {
-      popupRef.current.onClick();
-    }
+    window.open(whatsappLink);
+    // if (popupRef.current) {
+    //   popupRef.current.onClick();
+    // }
   };
 
   useEffect(() => {
@@ -55,7 +98,7 @@ function App() {
         document.body.scrollTop;
 
       // Verifica se l'utente ha scrollato la pagina di una quantità pari all'altezza della pagina
-      if (scrollY >= windowHeight) {
+      if (scrollY >= windowHeight * 0.6) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -105,17 +148,45 @@ function App() {
       <div style={{ marginTop: "-80px" }}>
         <Hero onBook={handleClick} />
       </div>
-      <div id="mainContainer">
-        <div style={{ opacity: !isScrolled ? 0 : 1 }}>
-          <PopupWidget
+      <div
+        style={{
+          marginTop: "-80px",
+          opacity: !isScrolled ? 0 : 1,
+          width: "8vh",
+          borderRadius: "4vh",
+          height: "8vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "green",
+
+          display: "flex",
+          position: "sticky",
+          top: "88vh",
+          left: "90vw",
+          zIndex: 999,
+          cursor: "pointer",
+        }}
+      >
+        <SocialIconLink
+          href={whatsappLink}
+          target="_blank"
+          aria-label="Whatsapp"
+          rel="noopener noreferrer"
+          fontSize="5vh"
+        >
+          <FaWhatsapp />
+        </SocialIconLink>
+        {/* <PopupWidget
             ref={popupRef}
-            url="https://calendly.com/giuseppe-pastore/schedule"
+            url="https://api.whatsapp.com/send?phone=3318479926&text=Ciao Manuel, vorrei prenotare una chiamata conoscitiva con te. Quando saresti disponibile?"
             rootElement={document.getElementById("root")}
             text="Contattami"
             textColor="#ffffff"
             color="#e31837"
-          />
-        </div>
+          /> */}
+      </div>
+      <div id="mainContainer">
         <SentencePage>
           <div
             style={{
@@ -143,7 +214,7 @@ function App() {
           </div>
         </SentencePage>
 
-        <PhotoPage id="chisono" img={manuelRoberto2}>
+        <PhotoPage id="chisono" img={chiSono}>
           <div
             style={{
               display: "flex",
@@ -206,7 +277,7 @@ function App() {
             affidarti al mio servizio di coaching online. */}
           </div>
         </SentencePage>
-        <PhotoPage left img={manuelRoberto2}>
+        <PhotoPage left img={corsiInPresenza}>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <HeroH2 textAlign="left">CORSI IN PRESENZA</HeroH2>
 
@@ -221,7 +292,7 @@ function App() {
             </ProductsInfo>
           </div>
         </PhotoPage>
-        <PhotoPage right img={manuelRoberto2}>
+        <PhotoPage right img={sedutePersonal}>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <HeroH2 textAlign="right">SEDUTE DI PERSONAL</HeroH2>
 
@@ -300,6 +371,7 @@ function App() {
             </ProductsInfo>
           </div>
         </PhotoPage>
+        <SentencePage id="gallery"></SentencePage>
         <SentencePage id="diconoDiMe">
           <div style={{ display: "flex", flexDirection: "column" }}>
             <ProductsHeading marginBottom={"1rem"}>

@@ -1,13 +1,20 @@
 import styled, { keyframes } from 'styled-components';
-import ImgBg from '../../images/pizza-3.jpg';
+import copertina from '../../images/main/copertina.jpg';
 
 export const HeroContainer = styled.div`
 	background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
-		url(${ImgBg});
+		url(${copertina});
 	height: 100vh;
-	background-position: right;
+	background-position: center top;
 	background-size: cover;
 	padding-top: 100px;
+
+	@media screen and (min-width: 650px) {
+		background-position: right top; /* Impostato su "right" per mantenere l'immagine sulla destra */
+		background-repeat: no-repeat; /* Impostato su "no-repeat" per evitare la ripetizione dell'immagine */
+		background-color: black; /* Impostato il colore di sfondo a nero */
+		background-size: auto;
+	}
 `;
 
 export const HeroContent = styled.div`
