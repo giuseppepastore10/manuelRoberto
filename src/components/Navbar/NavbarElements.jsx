@@ -12,18 +12,31 @@ export const Nav = styled.nav`
 	width: 100%;
 	position: sticky;
 	top: 0;
-	padding-left: 3rem;
-	padding-right: 3rem;
+	
 	z-index: 999;
+`;
+
+export const NavContentWrap = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: left;
+max-width: 1100px;
+align-items: center;
+width:100%;
+margin: 0px auto 0 auto;
+flex-direction: row;
+
+
 `;
 
 export const NavWrap = styled.div`
 	padding: 16px 24px;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	flex-direction: row;
+	justify-content: space-between;
 	align-items: center;
 	max-width: 1300px;
+	width: 100%;
 	margin: 0 auto;
 `;
 
@@ -45,17 +58,11 @@ export const NavLink = styled(Link)`
 `;
 
 export const NavIcon = styled.div`
-	display: block;
-	position: absolute;
-	top: 0;
-	right: 0;
+	
+	
 	cursor: pointer;
 	color: #fff;
 
-	p {
-		transform: translate(-50%, 100%);
-		font-weight: bold;
-	}
 `;
 
 export const Bars = styled(FaPizzaSlice)`
