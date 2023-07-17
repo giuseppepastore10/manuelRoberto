@@ -5,8 +5,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useRef, useState } from "react";
-import { PopupWidget } from "react-calendly";
-import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import PhotoPage from "./components/Feature/PhotoPage";
@@ -14,6 +12,7 @@ import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
 import { HeroH2 } from "./components/Hero/HeroElements";
 import NavBar from "./components/Navbar/Navbar";
+import Products from "./components/Products/Products";
 import {
   ProductsHeading,
   ProductsInfo,
@@ -25,21 +24,17 @@ import { GlobalStyle } from "./globalStyles";
 import feedback1 from "./images/feedbacks/feedback1.png";
 import feedback2 from "./images/feedbacks/feedback2.png";
 import feedback3 from "./images/feedbacks/feedback3.png";
-import giuseppe from "./images/front.png";
-import { default as manuelRoberto2 } from "./images/manuelRoberto2.jpeg";
-import marco from "./images/marco.png";
-import Products from "./components/Products/Products";
 
+import "react-gallery-carousel/dist/index.css";
 import chiSono from "./images/main/chiSono.jpg";
-import copertina from "./images/main/copertina.jpg";
 import corsiInPresenza from "./images/main/corsiInPresenza.jpg";
 import sedutePersonal from "./images/main/sedutePersonal.jpg";
-import { SocialIconLink } from "./components/Footer/FooterElements";
-import { FaWhatsapp } from "react-icons/fa";
-import ImageGallery from "react-image-gallery";
-import "react-gallery-carousel/dist/index.css";
 
 import uno from "./images/gallery/1.jpg";
+import dieci from "./images/gallery/10.jpg";
+import undici from "./images/gallery/11.jpg";
+import dodici from "./images/gallery/12.jpg";
+import tredici from "./images/gallery/13.jpg";
 import due from "./images/gallery/2.jpg";
 import tre from "./images/gallery/3.jpg";
 import quattro from "./images/gallery/4.jpg";
@@ -48,10 +43,10 @@ import sei from "./images/gallery/6.jpg";
 import sette from "./images/gallery/7.jpg";
 import otto from "./images/gallery/8.jpg";
 import nove from "./images/gallery/9.jpg";
-import dieci from "./images/gallery/10.jpg";
-import undici from "./images/gallery/11.jpg";
-import dodici from "./images/gallery/12.jpg";
-import tredici from "./images/gallery/13.jpg";
+
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import SliderMenu from "./components/Review/SliderMenu";
+import VideoGallery from "./components/VideoGallery/VideoGallery";
 
 const images = [
   uno,
@@ -150,41 +145,37 @@ function App() {
       </div>
       <div
         style={{
-          marginTop: "-80px",
-          opacity: !isScrolled ? 0 : 1,
-          width: "8vh",
-          borderRadius: "4vh",
-          height: "8vh",
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          width: "6vh",
+          height: "6vh",
+          borderRadius: "3vh",
+          backgroundColor: "green",
+          boxShadow: "0 2px 5px rgba(0, 0, 0, 0.3)",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "green",
-
-          display: "flex",
-          position: "sticky",
-          top: "88vh",
-          left: "90vw",
-          zIndex: 999,
           cursor: "pointer",
+          opacity: isScrolled ? 1 : 0,
+          transition: "opacity 0.3s ease",
+          zIndex: 999,
+          transform: isScrolled ? "translateY(0)" : "translateY(10px)",
         }}
       >
-        <SocialIconLink
+        <a
           href={whatsappLink}
           target="_blank"
           aria-label="Whatsapp"
           rel="noopener noreferrer"
-          fontSize="5vh"
         >
-          <FaWhatsapp />
-        </SocialIconLink>
-        {/* <PopupWidget
-            ref={popupRef}
-            url="https://api.whatsapp.com/send?phone=3318479926&text=Ciao Manuel, vorrei prenotare una chiamata conoscitiva con te. Quando saresti disponibile?"
-            rootElement={document.getElementById("root")}
-            text="Contattami"
-            textColor="#ffffff"
-            color="#e31837"
-          /> */}
+          <FontAwesomeIcon
+            icon={faWhatsapp}
+            style={{ fontSize: "3vh", marginTop: "0.5vh", color: "white" }}
+          />
+        </a>
+        {/* <FaWhatsapp /> */}
+        {/* </SocialIconLink> */}
       </div>
       <div id="mainContainer">
         <SentencePage>
@@ -195,7 +186,7 @@ function App() {
             }}
           >
             <ProductsHeading>Sei pronto?</ProductsHeading>
-            Che tu voglia migliorare il tuo aspetto
+            Che tu voglia migliorare forza e massa muscolare
             <br />
             <br />
             Che tu voglia scoprire cosa è il calisthencis
@@ -204,7 +195,7 @@ function App() {
             Che tu voglia semplicemente tenerti in forma
             <br />
             <br />
-            O raggiungere i tuoi traguardi
+            e raggiungere i tuoi traguardi
             <br />
             <br />
             <ProductsTitle>
@@ -224,21 +215,25 @@ function App() {
             <HeroH2 textAlign="right">CHI SONO</HeroH2>
             <ProductsInfo textAlign="right">
               Mi chiamo Manuel Roberto, e per me il Calisthenics va oltre il
-              semplice allenamento. È un modo di connettersi con il proprio
-              corpo, di esplorare le proprie capacità e di superare i propri
-              limiti. Attraverso il mio lavoro, voglio ispirare le persone.
-              Voglio che ognuno conosca il proprio potenziale e abbia la fiducia
-              di migliorarsi. Sono un istruttore certificato Burningate dal 2018
-              e mi piace tenermi sempre aggiornato sulle ultime novità. Mi
-              impegno costantemente per migliorare le mie competenze e
-              garantirti un servizio di qualità nel campo del Calisthenics. Il
-              mio obiettivo è offrirti un servizio all'avanguardia e completo.
-              Recentemente ho ottenuto una laurea magistrale in nutrizione.
-              Questo mi permette di unire l'aspetto alimentare al mio approccio
-              all'allenamento. Posso darti consigli personalizzati sulla dieta,
-              sull'equilibrio nutrizionale e sull'uso di integratori, in modo da
-              massimizzare i tuoi risultati e prenderti cura del tuo benessere
-              generale.
+              semplice allenamento.Ho iniziato ad allenarmi al parchetto ai
+              tempi dell'università perchè non potevo permettermi una palestra e
+              da quel momento non mi sono più fermato. Il calisthenics è una
+              disciplima, un modo di connettersi con il proprio corpo, di
+              esplorare le proprie capacità e di superare i propri limiti.
+              Attraverso il mio lavoro, voglio ispirare le persone. Voglio che
+              ognuno conosca il proprio potenziale e abbia la fiducia di
+              migliorarsi. Sono un istruttore certificato Burningate dal 2018 e
+              mi piace tenermi sempre aggiornato tramite la lettura, la
+              partecipazione a seminari e workshop per migliorare le mie
+              competenze e garantirti un servizio di qualità nel campo del
+              Calisthenics. Il mio obiettivo è offrirti un servizio
+              all'avanguardia e completo. Ho conseguito una laurea triennalee in
+              Biologia della Nutrizione e recentemente una laurea magistrale in
+              Nutrition and Functional Food. Questo mi permette di unire
+              l'aspetto alimentare al mio approccio all'allenamento. Posso darti
+              consigli personalizzati sulla dieta, sull'equilibrio nutrizionale
+              e sull'uso di integratori, in modo da massimizzare i tuoi
+              risultati e prenderti cura del tuo benessere generale.
             </ProductsInfo>
           </div>
         </PhotoPage>
@@ -284,7 +279,8 @@ function App() {
             <ProductsInfo textAlign="left">
               Se invece sei quel tipo di persona che preferisce allenarsi di
               persona, puoi trovare i miei corsi in presenza presso la palestra
-              LiveFit a Grottaminarda e lo studio XDE ad Ariano Irpino. Sarò lì
+              LiveFit a Grottaminarda (AV), via Osvaldo Sanini, 24, e Balance
+              Studio Training ad Ariano Irpino (AV), via Serra, 10. Sarò lì
               personalmente per seguirti durante le sessioni di allenamento. Sia
               che tu sia un principiante o un atleta esperto, i corsi in
               presenza si adattano al tuo livello. Scegli la sede che ti è più
@@ -316,69 +312,17 @@ function App() {
             cui mi ritengo fiero.
           </div>
         </SentencePage>
-        <PhotoPage left={true} img={giuseppe}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <HeroH2 textAlign="left">Il percorso in front di Giuseppe</HeroH2>
-            <ProductsInfo textAlign="left">
-              Giuseppe è un ragazzo che seguo tramite il coaching online ed il
-              nostro è un percorso di cui vado particolarmente fiero, visto il
-              peso corporeo e la distribuzione di quest'ultimo sicuramente
-              svantaggiosa per un soggetto che allena skills. Come sempre il
-              lavoro impostato è stato con ampio margine in propedeutiche come
-              tuck, adv, onelegadv con loop band e ampio spazio a lavori
-              dinamici, soprattutto i raises in one leg che sentiva
-              particolarmente bene.
-              {/* I miei corsi in presenza presso la palestra LiveFit a
-              Grottaminarda e lo studio XDE ad Ariano Irpino. Sarò lì
-              personalmente per seguirti durante le sessioni di allenamento. Sia
-              che tu sia un principiante o un atleta esperto, i corsi in
-              presenza si adattano al tuo livello. Scegli la sede che ti è più
-              comoda e inizia il tuo percorso! */}
-            </ProductsInfo>
-          </div>
-        </PhotoPage>
-        <PhotoPage img={marco}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <HeroH2 textAlign="right">
-              Il percorso di Marco nel Muscle Up
-            </HeroH2>
-            <ProductsInfo textAlign="right">
-              La collaborazione con Marco è iniziata a novembre 2022, con un
-              livello basso livello di forza nella parte superiore del corpo
-              provenendo dal calcio. Con il passare dei mesi abbiamo lavorato
-              dapprima sull'apprendimento della trazione e poi sulle varie
-              propedeutiche del muscle up. Il ragazzo ha risposto bene ed ha
-              sicuramente una buona componente genetica dal suo lato, ma
-              soprattutto tanta abnegazione nei confronti dell'allenamento in
-              quanto oltre al muscle up alleniamo planche, front, back,
-              verticale e zavorre.
-            </ProductsInfo>
-          </div>
-        </PhotoPage>
-        <PhotoPage left={true} img={giuseppe}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <HeroH2 textAlign="left">Il percorso di Marco nel Muscle Up</HeroH2>
-
-            <ProductsInfo textAlign="left">
-              Giuseppe è un ragazzo che seguo tramite il coaching online ed il
-              nostro è un percorso di cui vado particolarmente fiero, visto il
-              peso corporeo e la distribuzione di quest'ultimo sicuramente
-              svantaggiosa per un soggetto che allena skills. Come sempre il
-              lavoro impostato è stato con ampio margine in propedeutiche come
-              tuck, adv, onelegadv con loop band e ampio spazio a lavori
-              dinamici, soprattutto i raises in one leg che sentiva
-              particolarmente bene.
-            </ProductsInfo>
-          </div>
-        </PhotoPage>
-        <SentencePage id="gallery"></SentencePage>
+        <SentencePage id="gallery">
+          <VideoGallery />
+        </SentencePage>
         <SentencePage id="diconoDiMe">
           <div style={{ display: "flex", flexDirection: "column" }}>
             <ProductsHeading marginBottom={"1rem"}>
               Dicono di me
             </ProductsHeading>
+            <SliderMenu />
 
-            <Carousel
+            {/* <Carousel
               showArrows={false}
               infiniteLoop={true}
               showThumbs={false}
@@ -400,7 +344,7 @@ function App() {
                   <img style={{ width: "60%", borderRadius: "2rem" }} src={x} />
                 </div>
               ))}
-            </Carousel>
+            </Carousel> */}
           </div>
         </SentencePage>
       </div>

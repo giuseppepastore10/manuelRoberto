@@ -80,10 +80,22 @@ export const HeroH2 = styled.p`
 	padding: 1rem;
 	text-align: ${props => props.textAlign || 'left'};
 
+`;
+
+export const HeroVideo = styled.p`
 	
-	
+	min-height: 10rem;
+
+	max-width: 20rem;
+	text-align: ${props => props.textAlign || 'center'};
+
+	@media screen and (max-width: 1200px) {
+		min-height: 3rem;
+	}
 
 `;
+
+
 
 export const HeroP = styled.p`
 	font-size: clamp(2rem, 2.5vw, 3rem);

@@ -68,6 +68,23 @@ export const ProductsInfo = styled.div`
 	  }
 `;
 
+export const ProductsInfoVideo = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 20rem;
+	min-height: 8rem;
+	font-size: ${props => props.fontSize || ''}; 
+	text-align: ${props => props.textAlign || 'center'};
+
+	@media screen and (max-width: 1200px) {
+		min-height: ${props => props.zeroMargin? '0':"8rem"};
+	  }
+
+	
+`;
+
 export const ProductsDesc = styled.p`
 	padding: 2rem;
 	text-align: ${props => props.textAlign || 'left'};
