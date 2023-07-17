@@ -41,6 +41,7 @@ export const GlobalStyle = createGlobalStyle`
         outline: none;
         border: none;
         cursor: pointer;
+        border-radius: 1rem;
         
     }
 

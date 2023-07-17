@@ -103,6 +103,11 @@ export const HeroP = styled.p`
 	opacity: 0;
 	animation: ${fadeIn} 1s ease-in-out forwards;
 	animation-delay: 0.5s;
+
+	@media screen and (max-width: 650px) {
+		font-size: clamp(1.4rem, 2vw, 3rem);
+		text-align: center;
+	}
 `;
 
 export const HeroBtn = styled.button`

@@ -30,7 +30,7 @@ function Sidebar({ isOpen, toggle }) {
 								aria-label='Facebook'
 								rel='noopener noreferrer'
 							>
-								<FaFacebook />
+								<FaFacebook color="black" />
 							</SocialIconLink>
 							
 							<SocialIconLink
@@ -39,7 +39,7 @@ function Sidebar({ isOpen, toggle }) {
 								aria-label='Instagram'
 								rel='noopener noreferrer'
 							>
-								<FaInstagram />
+								<FaInstagram color="black" />
 							</SocialIconLink>
 							<SocialIconLink
 								href='https://api.whatsapp.com/send?phone=3318479926&text=Ciao Manuel"'
@@ -47,7 +47,7 @@ function Sidebar({ isOpen, toggle }) {
 								aria-label='Whatsapp'
 								rel='noopener noreferrer'
 							>
-								<FaWhatsapp />
+								<FaWhatsapp color="black" />
 							</SocialIconLink>
 							
 				
