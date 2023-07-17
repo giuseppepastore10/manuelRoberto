@@ -10,7 +10,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import PhotoPage from "./components/Feature/PhotoPage";
 import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
-import { HeroH2 } from "./components/Hero/HeroElements";
+import { HeroH2, PlaceLink } from "./components/Hero/HeroElements";
 import NavBar from "./components/Navbar/Navbar";
 import Products from "./components/Products/Products";
 import {
@@ -277,14 +277,35 @@ function App() {
             <HeroH2 textAlign="left">CORSI IN PRESENZA</HeroH2>
 
             <ProductsInfo textAlign="left">
-              Se invece sei quel tipo di persona che preferisce allenarsi di
-              persona, puoi trovare i miei corsi in presenza presso la palestra
-              LiveFit a Grottaminarda (AV), via Osvaldo Sanini, 24, e Balance
-              Studio Training ad Ariano Irpino (AV), via Serra, 10. Sarò lì
-              personalmente per seguirti durante le sessioni di allenamento. Sia
-              che tu sia un principiante o un atleta esperto, i corsi in
-              presenza si adattano al tuo livello. Scegli la sede che ti è più
-              comoda e inizia il tuo percorso!
+              <span>
+                Se invece sei quel tipo di persona che preferisce allenarsi di
+                persona, puoi trovare i miei corsi in presenza presso la
+                palestra{" "}
+                <PlaceLink
+                  target="_blank"
+                  href="https://www.facebook.com/veniceFit/?locale=it_IT"
+                >
+                  LiveFit
+                </PlaceLink>{" "}
+                a{" "}
+                <PlaceLink
+                  target="_blank"
+                  href="https://goo.gl/maps/WEtMh1YCyGKtGVDGA"
+                >
+                  Grottaminarda (AV), via Osvaldo Sanini, 24
+                </PlaceLink>
+                , e Balance Studio Training ad{" "}
+                <PlaceLink
+                  target="_blank"
+                  href="https://goo.gl/maps/EmiuieUiffdHn5Jr8"
+                >
+                  Ariano Irpino (AV), via Serra, 10
+                </PlaceLink>
+                . Sarò lì personalmente per seguirti durante le sessioni di
+                allenamento. Sia che tu sia un principiante o un atleta esperto,
+                i corsi in presenza si adattano al tuo livello. Scegli la sede
+                che ti è più comoda e inizia il tuo percorso!
+              </span>
             </ProductsInfo>
           </div>
         </PhotoPage>

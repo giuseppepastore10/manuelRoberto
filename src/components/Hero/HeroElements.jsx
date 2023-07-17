@@ -95,6 +95,15 @@ export const HeroVideo = styled.p`
 
 `;
 
+export const PlaceLink = styled.a`
+
+	
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+	overflow: hidden;
+  
+`;
 
 
 export const HeroP = styled.p`

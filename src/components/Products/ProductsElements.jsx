@@ -62,6 +62,7 @@ export const ProductsInfo = styled.div`
 	min-height: 8rem;
 	font-size: ${props => props.fontSize || ''}; 
 	text-align: ${props => props.textAlign || 'left'};
+	white-space: ${props => props.wSpace || 'normal'}; 
 
 	@media screen and (max-width: 1200px) {
 		min-height: ${props => props.zeroMargin? '0':"8rem"};

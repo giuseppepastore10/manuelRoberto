@@ -6,6 +6,7 @@ export const Nav = styled.nav`
 	background: rgba(227,24,55,0.5);
 	height: 80px;
 	display: flex;
+	
 	justify-content: space-between;
 	font-weight: 700;
 	width: 100%;
@@ -14,6 +15,16 @@ export const Nav = styled.nav`
 	padding-left: 3rem;
 	padding-right: 3rem;
 	z-index: 999;
+`;
+
+export const NavWrap = styled.div`
+	padding: 16px 24px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 1300px;
+	margin: 0 auto;
 `;
 
 export const NavLink = styled(Link)`
