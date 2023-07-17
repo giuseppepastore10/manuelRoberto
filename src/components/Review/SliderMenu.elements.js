@@ -92,7 +92,7 @@ export const SliderOccupation = styled.h4`
 export const SliderDescription = styled.p`
   color: #949494;
   font-size: 15px;
-  width: 80%;
+  width: 100%;
   margin: auto;
   margin-top: 2rem;
   font-family: sans-serif;

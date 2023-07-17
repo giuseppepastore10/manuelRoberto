@@ -84,14 +84,11 @@ export const HeroH2 = styled.p`
 
 export const HeroVideo = styled.p`
 	
-	min-height: 10rem;
-
+	min-height: 10vw;
 	max-width: 20rem;
 	text-align: ${props => props.textAlign || 'center'};
 
-	@media screen and (max-width: 1200px) {
-		min-height: 3rem;
-	}
+	
 
 `;
 

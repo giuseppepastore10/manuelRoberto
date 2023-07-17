@@ -26,12 +26,13 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     .video-container .video {
-        height: 35rem;
-        width: 20rem;
+        height: 53.30rem;
+        width: 30rem;
         margin: 2rem;
         box-shadow: 0 .5rem 1rem rgba(0,0,0,0.5);
         overflow: hidden;
         border-radius: 1rem;
+
     }
     
     .video-container .video video{

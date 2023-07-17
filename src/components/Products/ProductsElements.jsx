@@ -75,7 +75,7 @@ export const ProductsInfoVideo = styled.div`
 	justify-content: center;
 	align-items: center;
 	max-width: 20rem;
-	min-height: 8rem;
+	
 	font-size: ${props => props.fontSize || ''}; 
 	text-align: ${props => props.textAlign || 'center'};
 
