@@ -23,6 +23,12 @@ padding: 3rem;
 min-height: ${props => props.noWholeWindow? "" : "100vh"};
 width:100%;
 
+@media screen and (max-width: 650px) {
+    padding-top: 30rem;
+    padding-bottom: 30rem;
+    
+}
+
 
 
 

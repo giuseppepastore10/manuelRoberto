@@ -44,6 +44,31 @@ export const ProductsTitle = styled.h2`
 	font-size: clamp(2rem, 2.5vw, 3rem);
 `;
 
+export const ProductIconContainer = styled.div`
+	display:flex;
+	width:100%; 
+	justifyContent:center;
+	align-items:center;
+	
+`;
+
+export const ProductIcon = styled.span`
+font-size: clamp(2rem, 8vw, 2rem);
+
+padding: 6rem;
+
+
+@media screen and (max-width: 650px) {
+	font-size: clamp(3rem, 8vw, 3rem);
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+
+	
+}
+		
+	
+`;
+
 export const ProductsInfo = styled.div`
 	display: flex;
 	flex-direction: column;
