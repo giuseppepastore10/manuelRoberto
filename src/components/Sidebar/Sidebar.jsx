@@ -20,6 +20,7 @@ function Sidebar({ isOpen, toggle }) {
 				<SidebarLink onClick={toggle} href='#coaching'>Allenati con me</SidebarLink>
 				<SidebarLink onClick={toggle} href='#successo'>Storie di successo</SidebarLink>
 				<SidebarLink onClick={toggle} href='#diconoDiMe'>Dicono di me</SidebarLink>
+				<SidebarLink onClick={toggle} href='#gallery'>Gallery</SidebarLink>
 				<div style={{width:"100%", display:'flex',marginTop: "2rem",justifyContent:'center', alignItems:'center'}}>
 				
 							<SocialIconLink
