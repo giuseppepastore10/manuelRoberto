@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
-import { ImQuotesRight } from "react-icons/im";
 
 export const SliderMenuProfileWrapper = styled.div`
   text-align: center;
@@ -57,6 +56,7 @@ export const SliderDescription = styled.p`
 
   @media screen and (max-width: 650px) {
     font-size: clamp(5rem, 8vw, 3rem);
+    width: 100%;
   }
 `;
 
