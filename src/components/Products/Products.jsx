@@ -14,12 +14,12 @@ function Products({ heading, data,left,imgs }) {
 				{data.map((product, index) => {
 					return (
 						<div style={{display:'flex',flexDirection:'column', alignItems:'center', }}>
-						<ProductsCard key={index}>
-							<div style={{display:'flex',width:"100%", padding: "3rem", justifyContent:'center',alignItems:'center'}}>
+						{/* <ProductsCard key={index}>
+							<div style={{display:'flex',width:"100%", border: "1px solid red",justifyContent:'center',alignItems:'center'}}>
 								{product.icon}
 							</div>
 							
-						</ProductsCard>
+						</ProductsCard> */}
 						
 						<ProductsCard  key={index}>
 							

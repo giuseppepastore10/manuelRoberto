@@ -40,16 +40,24 @@ export const SliderName = styled.h3`
   letter-spacing: 2px;
   padding: 0;
   margin-bottom: 0.3rem;
+
+  @media screen and (max-width: 650px) {
+    font-size: clamp(3rem, 8vw, 3rem);
+  }
 `;
 
 export const SliderDescription = styled.p`
   color: #949494;
   font-size: clamp(2.5rem, 10vw, 2rem);
-  width: 60%;
+  width: 70%;
   overflow: hidden;
   margin: auto;
   margin-top: 2rem;
   font-family: sans-serif;
+
+  @media screen and (max-width: 650px) {
+    font-size: clamp(5rem, 8vw, 3rem);
+  }
 `;
 
 export const SliderMenuContainer = styled.div`

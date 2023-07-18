@@ -19,8 +19,8 @@ export const ProductsWrapper = styled.div`
 `;
 
 export const ProductsCard = styled.div`
-	margin: 0 3rem;
-	line-height: 2;
+	margin: 2rem;
+	
 	display:flex;
 	flex-direction: column;
 	justify-content: center;

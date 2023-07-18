@@ -71,6 +71,11 @@ export const HeroH1NoAnim = styled.h1`
 	padding: 2rem;
 	letter-spacing: 0.5rem;
 
+	@media screen and (max-width: 650px) {
+		font-size: ${props=>props.fontSize?"clamp(5rem, 8vw, 3rem);":"clamp(8rem, 8vw, 3rem);"};
+		
+	}
+
 `;
 
 
@@ -98,6 +103,11 @@ padding: 2rem;
 
 
 font-size: clamp(2rem, 5vw, 2rem);
+
+@media screen and (max-width: 650px) {
+	font-size: ${props=>props.fontSize?"clamp(5rem, 8vw, 3rem);":"clamp(8rem, 8vw, 3rem);"};
+	
+}
 
 text-align: ${props => props.textAlign || ''};
 
@@ -127,7 +137,7 @@ export const HeroP = styled.p`
 
 	text-align: ${props => props.textAlign || ''};
 	@media screen and (max-width: 650px) {
-		font-size: clamp(3rem, 8vw, 2rem);
+		font-size: clamp(5rem, 8vw, 3rem);
 		
 	}
 `;
@@ -145,7 +155,7 @@ export const HeroBtn = styled.button`
 	border-radius: 10rem;
 
 	@media screen and (max-width: 650px) {
-		font-size: clamp(3rem, 8vw, 2rem);
+		font-size: clamp(5rem, 8vw, 2rem);
 		
 	}
 

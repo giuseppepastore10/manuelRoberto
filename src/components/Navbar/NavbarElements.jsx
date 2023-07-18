@@ -29,23 +29,30 @@ padding: 1vh 3rem;
 
 export const NavLink = styled(Link)`
 	color: #fff;
-	font-size: ${props => props.fontSize || 'clamp(1.5rem, 10vw, 3rem);'};
+	font-size: ${props => props.fontSize || 'clamp(1.5rem, 10vw, 4rem);'};
 	
 	display: flex;
 	
 	text-decoration: none;
 	cursor: pointer;
 	
+	@media screen and (min-width: 900px) {
+		font-size: ${props => props.fontSize || 'clamp(2rem, 10vw, 1.5rem);'};
+	  }
 
 	
 `;
 
 export const NavIcon = styled.div`
 	
-	font-size: ${props => props.fontSize || 'clamp(1.5rem, 10vw, 1.5rem);'};
+	font-size: ${props => props.fontSize || 'clamp(2.5rem, 10vw, 1.5rem);'};
 
 	cursor: pointer;
 	color: #fff;
+
+	@media screen and (min-width: 900px) {
+		font-size: ${props => props.fontSize || 'clamp(1.5rem, 10vw, 1.5rem);'};
+	  }
 
 `;
 

@@ -155,7 +155,7 @@ function App() {
 
   let onlineCoaching = [
     {
-      title: "Schede personalizzate",
+      title: "Schede personalizzate con test",
       desc: "Le schede vengono precedute da un test per valutare lo stato fisico, durano 4 settimane + 1 settimana di test. I programmi vengono adattati progressivamente settimana dopo settimana durante il mesociclo",
       icon: <FontAwesomeIcon icon={faClipboardCheck} size="3x" />,
     },
