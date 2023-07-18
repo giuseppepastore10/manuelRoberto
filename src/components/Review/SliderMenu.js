@@ -13,7 +13,7 @@ const allProfiles = [
     id: 1,
     image:
       "https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-2_ipcjws.jpg",
-    name: "Giuseppe P",
+    name: "Antonio M.",
     title: "office manager",
     quote:
       "Beh cosa dire, sono stra contento dei risultati che portiamo avanti nonostante il lavoro pesante che faccio... sei riuscito a strutturarmi delle schede che riuscissero a rispettare il mio infortunio ed il lavoro. Abbiamo curato, e stiamo curando, la tecnica tantissimo e mii hai fatto migliorare cose che prima facevo male. Il tutto senza accorgermi che mi hai fatto migliorare i massimali rispetto a prima dell'infortunio e curando la tecnica... sono molto contento anche del rapporto che abbiamo instaurato... continuiamo cosi coach!",
@@ -21,7 +21,7 @@ const allProfiles = [
   {
     id: 5,
     image: "https://nedas.dev/static/images/profile2.jpg",
-    name: "Giulio F",
+    name: "Andrea U.",
     title: "funny guy",
     quote:
       "Ormai sono 5 mesi che abbiamo iniziato questo percorso e quando ti scrissi ero semplicemente pieno di determinazione ma non sarebbe bastata per farmi raggiungere certi risultati senza una programmazione complessa e approfondita. Ad oggi, anche se sono solo all'inizio, sono felice degli obiettivi raggiunti grazie alla disciplina e perseveranza e soprattutto a te, alla passione che metti in ciò che fai. ",
@@ -30,7 +30,7 @@ const allProfiles = [
     id: 2,
     image:
       "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg",
-    name: "Margo D",
+    name: "Tommaso D.",
     title: "regular guy",
     quote:
       "Ho finito la prima programmazione, è incredibile, quando l'avevo vista la prima volta mi ero spaventato. Ho ribaltato tutti i miei preconcetti sul calisthenics. E questo è merito tuo e della tua meticolosità. In poco più di un mese sento di aver sviluppato forza, equilibrio e maggiore consapevolezza del mio corpo nello spazio. Per non parlare dei miglioramenti estetici. Non posso che ringraziarti della passione e della cura che dedichi ogni volta.",
@@ -39,7 +39,7 @@ const allProfiles = [
     id: 3,
     image:
       "https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959121/person-1_aufeoq.jpg",
-    name: "Antonio S",
+    name: "Tommaso D.",
     title: "product designer",
     quote:
       "Senza tralasciare il lato psicologico, mi dai supporto quando penso che sia difficile l'allenamento e quando sono svogliato. Ogni inizio mese leggo la scheda e penso di non farcela, invece me le fai chiudere sempre tutte rispettando e migliorando quello che c'è scritto.",
