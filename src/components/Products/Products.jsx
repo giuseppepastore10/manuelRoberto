@@ -5,14 +5,10 @@ import {
 	ProductsInfo,
 	ProductsWrapper
 } from './ProductsElements';
+import { HeroP } from '../Hero/HeroElements';
 
 function Products({ heading, data,left,imgs }) {
 	return (
-		<ProductsContainer>
-			
-			
-			
-			
 			
 			<ProductsWrapper>
 				{data.map((product, index) => {
@@ -27,30 +23,29 @@ function Products({ heading, data,left,imgs }) {
 						
 						<ProductsCard  key={index}>
 							
-							<ProductsInfo zeroMargin fontSize="clamp(1.5rem, 2.5vw, 1.5rem)" textAlign="center">
-								{product.title}
+							<HeroP textAlign="center">
+								<span style={{color: "white"}}>{product.title}</span>
 								
 								
 								
-							</ProductsInfo>
+							</HeroP>
 							<div style={{width:"100%", marginTop:"1rem", marginBottom:"1rem", border: "1px solid white"}}></div>
 						</ProductsCard>
 						<ProductsCard zeroMargin key={index}>
 							
-							<ProductsInfo fontSize="clamp(1rem, 2.5vw, 1.2rem)" textAlign="center">
+							<HeroP  textAlign="center">
 								
 								
-								<span style={{fontSize:"clamp(1rem, 2.5vw, 1rem)"}}>{product.desc}</span>
+								{product.desc}
 								
 								
-							</ProductsInfo>
+							</HeroP>
 						</ProductsCard>
 						
 						</div>
 					);
 				})}
 			</ProductsWrapper>
-		</ProductsContainer>
 	);
 }
 

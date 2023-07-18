@@ -1,17 +1,11 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import {
-  SliderMenuContainer,
-  SliderMenuHeader,
-  SliderMenuProfileWrapper,
-  SliderImage,
-  SliderName,
-  SliderOccupation,
   SliderDescription,
-  SliderMenuLeftSlider,
-  SliderMenuRightSlider,
-  SliderMenuQuoteIcon,
+  SliderMenuProfileWrapper,
+  SliderName,
   Wrapper,
+  SliderMenuContainer,
 } from "./SliderMenu.elements";
 
 const allProfiles = [
@@ -109,81 +103,48 @@ function SliderMenu(props) {
 
   return (
     <>
+      {/* <SliderMenuLeftSlider onClick={() => handleClick("previous")} /> */}
       <SliderMenuContainer>
-        {/* <SliderMenuHeader>
-          <strong>/</strong> Reviews
-        </SliderMenuHeader> */}
-        {/* <SliderMenuLeftSlider onClick={() => handleClick("previous")} /> */}
-        <Wrapper>
-          {profiles.map((person, index) => {
-            let personP = profiles[index + 1];
-            if (!person) return null;
-            return (
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                }}
+        {profiles.map((person, index) => {
+          let personP = profiles[index + 1];
+          if (!person) return null;
+          return (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              <SliderMenuProfileWrapper
+                className={(() => {
+                  const len = profiles.length;
+
+                  if (currentIndex === 0 && index === len - 1) {
+                    return "previous";
+                  } else if (currentIndex === len - 1 && index === 0) {
+                    return "future";
+                  } else if (index === currentIndex) {
+                    return "current";
+                  } else if (currentIndex > index) {
+                    return "previous";
+                  } else {
+                    return "future";
+                  }
+                })()}
+                key={person.id}
               >
-                <SliderMenuProfileWrapper
-                  className={(() => {
-                    const len = profiles.length;
+                <SliderName>{person.name}</SliderName>
+                <SliderDescription>{person.quote}</SliderDescription>
+              </SliderMenuProfileWrapper>
+            </div>
+          );
+        })}
+      </SliderMenuContainer>
 
-                    if (currentIndex === 0 && index === len - 1) {
-                      return "previous";
-                    } else if (currentIndex === len - 1 && index === 0) {
-                      return "future";
-                    } else if (index === currentIndex) {
-                      return "current";
-                    } else if (currentIndex > index) {
-                      return "previous";
-                    } else {
-                      return "future";
-                    }
-                  })()}
-                  key={person.id}
-                >
-                  {/* <SliderImage src={person.image} /> */}
-                  <SliderName>{person.name}</SliderName>
-                  {/* <SliderOccupation>{person.title}</SliderOccupation> */}
-                  <SliderDescription>{person.quote}</SliderDescription>
-                </SliderMenuProfileWrapper>
-
-                {false && (
-                  <SliderMenuProfileWrapper
-                    className={(() => {
-                      const len = profiles.length;
-
-                      if (currentIndex === 0 && index === len - 1) {
-                        return "previous";
-                      } else if (currentIndex === len - 1 && index === 0) {
-                        return "future";
-                      } else if (index === currentIndex) {
-                        return "current";
-                      } else if (currentIndex > index) {
-                        return "previous";
-                      } else {
-                        return "future";
-                      }
-                    })()}
-                    key={personP.id}
-                  >
-                    {/* <SliderImage src={person.image} /> */}
-                    <SliderName>{personP.name}</SliderName>
-                    {/* <SliderOccupation>{personP.title}</SliderOccupation> */}
-                    <SliderDescription>{personP.quote}</SliderDescription>
-                  </SliderMenuProfileWrapper>
-                )}
-              </div>
-            );
-          })}
-        </Wrapper>
-
-        {/* <SliderMenuRightSlider
+      {/* <SliderMenuRightSlider
           style={{ border: "1px solid red" }}
           onClick={() => handleClick("future")}
         /> */}
-      </SliderMenuContainer>
     </>
   );
 }

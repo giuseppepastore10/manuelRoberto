@@ -1,21 +1,22 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
+import styled from 'styled-components';
 
 export const SidebarContainer = styled.aside`
 	position: fixed;
 	z-index: 999;
-	width: 350px;
+	width: 30%;
 	height: 100%;
 	background: #ffc500;
 	display: grid;
 	align-items: center;
 	top: 0;
+	overflow: hidden;
 	transition: 0.3s ease-in-out;
-	right: ${({ isOpen }) => (isOpen ? '0' : '-1000px')};
+	right: ${({ isOpen }) => (isOpen ? '0' : '-10000px')};
 
 	@media screen and (max-width: 400px) {
-		width: 100%;
+		width: 100vw;
+		right: ${({ isOpen }) => (isOpen ? '0' : '-1000px')};
 	}
 `;
 
@@ -35,17 +36,28 @@ export const Icon = styled.div`
 `;
 
 export const SidebarMenu = styled.div`
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: repeat(4,80px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	height: 50%;
+	
+	grid-template-rows: repeat(4,5rem);
 	text-align: center;
+
+	@media screen and (max-width: 400px) {
+		height: 40%;
+	}
 `;
 
 export const SidebarLink = styled.a`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 1.5rem;
+	font-size: 2.5rem;
+	@media screen and (max-width: 400px) {
+		font-size: 6rem;
+	}
 	text-decoration: none;
 	list-style: none;
 	transition: 0.2s ease-in-out;
@@ -58,26 +70,3 @@ export const SidebarLink = styled.a`
 	}
 `;
 
-export const SideBtnWrap = styled.div`
-	display: flex;
-	justify-content: center;
-`;
-
-export const SidebarRoute = styled(Link)`
-	background: #e31837;
-	white-space: nowrap;
-	padding: 16px 64px;
-	color: #fff;
-	font-size: 16px;
-	outline: none;
-	border: none;
-	cursor: pointer;
-	transition: 0.2s ease-in-out;
-	text-decoration: none;
-
-	&:hover {
-		transition: 0.2s ease-in-out;
-		background: #fff;
-		color: #010606;
-	}
-`;

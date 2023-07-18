@@ -6,43 +6,63 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: "Kanit", sans-serif;
+        
+    }
+
+    html {
+        font-size: 1vw;
     }
 
     #mainContainer{
         padding: 3rem;
-        background-color: #000000;  
         overflow-x: hidden;
-        display: flex;
-        flex-direction:column;
-        align-items: center;
+        background: #000;
 
+        
     }
 
     
     .video-container {
         display: flex;
-        justify-content: center;
+        align-items: flex-start;
+        justify-content: space-between;
+        @media screen and (max-width: 1000px) {
+            justify-content: center;
+        }
+
         flex-wrap:wrap;
+        width:100%;
     }
-    
-    .video-container .video {
-        height: 53.30rem;
-        width: 30rem;
-        margin: 2rem;
-        box-shadow: 0 .5rem 1rem rgba(0,0,0,0.5);
-        overflow: hidden;
-        border-radius: 1rem;
+
+    .video-c {        display: flex,
+        flexDirection: column,
+
+        margin:0;
+
+        @media screen and (max-width: 1000px) {
+           
+            margin-left: 0rem;
+            margin-right: 0rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+
+        }
+
 
     }
     
+    
+
+    
+    
     .video-container .video video{
-        heigth: 100%;
-        width: 100%;
+      
         object-fit: contain;
         outline: none;
         border: none;
         cursor: pointer;
         border-radius: 1rem;
+        width:100%;
         
     }
 
@@ -53,22 +73,7 @@ export const GlobalStyle = createGlobalStyle`
 
     
 
-    .video-container .video .active{
-        // position: fixed;
-        // top: 50%; 
-        // left: 50%;
-        // transform: translate(-50%, -50%);
-        // width: auto;
-        // height: 80%;
-        // box-shadow: 0 0 0 100vhh rgba(0,0,0,.5);
-        // z-index: 999;
-        // border-radius:1rem;
-    }
-
-    // .video-container .video .active:hover{
-    //     transition: none;
-    //     transform: translate(-50%, -50%) scale(1);
-    // }
+   
 
 
 `;

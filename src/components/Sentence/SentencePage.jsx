@@ -5,7 +5,7 @@ function SentencePage(props) {
 	return (
 		<FeatureContainer noWholeWindow={props.noWholeWindow} id={props.id}>
 		
-			<ContentContainer>{props.children}</ContentContainer>
+			{props.children}
 
 			
 		</FeatureContainer>

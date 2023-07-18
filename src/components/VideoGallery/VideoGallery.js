@@ -1,11 +1,10 @@
-import { useRef } from "react";
-import antonio from "../../videos/storieDiSuccesso/antonio.mp4";
-import giuseppe from "../../videos/storieDiSuccesso/giuseppe.mp4";
-import marco from "../../videos/storieDiSuccesso/marco.mp4";
-import { HeroVideo } from "../Hero/HeroElements";
-import { ProductsInfoVideo } from "../Products/ProductsElements";
+import { useEffect, useRef, useState } from "react";
 import front from "../../images/front.png";
 import marcoPoster from "../../images/marco.png";
+import antonio from "../../videos/storieDiSuccesso/antonio.mov";
+import giuseppe from "../../videos/storieDiSuccesso/giuseppe.mp4";
+import marco from "../../videos/storieDiSuccesso/marco.mp4";
+import { HeroP, HeroVideo } from "../Hero/HeroElements";
 
 const videos = [
   {
@@ -32,18 +31,27 @@ const videos = [
 ];
 function VideoGallery() {
   const videoRefs = useRef([]);
+  const [vertical, setVertical] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1000) {
+        setVertical(false);
+      } else {
+        setVertical(true);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Pulizia dell'event listener quando il componente viene smontato
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleVideoClick = (index) => {
     const video = videoRefs.current[index];
-
-    // videoRefs.current.map((x, i) => {
-    //   if (i != index) {
-    //     x.classList.remove("active");
-    //     videoRefs.current[i].pause();
-    //     videoRefs.current[i].currentTime = 0;
-    //   }
-    // });
-    // video.classList.toggle("active");
 
     if (video.paused) {
       video.play();
@@ -54,33 +62,29 @@ function VideoGallery() {
   };
 
   return (
-    <div className="video-main-container">
-      <div style={{ width: "100%" }} className="video-container">
-        {videos.map((videoSrc, index) => (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <div className="video" key={index}>
-              <video
-                ref={(el) => (videoRefs.current[index] = el)}
-                src={videoSrc.video}
-                muted
-                poster={videoSrc.cover}
-                onClick={() => handleVideoClick(index)}
-              />
-            </div>
-            <div style={{ minHeight: "50rem" }}>
-              <HeroVideo>{videoSrc.main}</HeroVideo>
-              <ProductsInfoVideo>{videoSrc.desc}</ProductsInfoVideo>
-            </div>
+    <div className="video-container">
+      {videos.map((videoSrc, index) => (
+        <div
+          className="video-c"
+          style={{
+            width: !vertical ? "26vw" : "70vw",
+          }}
+          key={index + "2"}
+        >
+          <div className="video" key={index}>
+            <video
+              ref={(el) => (videoRefs.current[index] = el)}
+              src={videoSrc.video}
+              muted
+              // poster={videoSrc.cover}
+              onClick={() => handleVideoClick(index)}
+            />
           </div>
-        ))}
-      </div>
+
+          <HeroVideo>{videoSrc.main}</HeroVideo>
+          <HeroP>{videoSrc.desc}</HeroP>
+        </div>
+      ))}
     </div>
   );
 }

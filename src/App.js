@@ -10,14 +10,15 @@ import { BrowserRouter as Router } from "react-router-dom";
 import PhotoPage from "./components/Feature/PhotoPage";
 import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
-import { HeroH2, PlaceLink } from "./components/Hero/HeroElements";
+import {
+  HeroH1,
+  HeroH1NoAnim,
+  HeroH2,
+  HeroP,
+  PlaceLink,
+} from "./components/Hero/HeroElements";
 import NavBar from "./components/Navbar/Navbar";
 import Products from "./components/Products/Products";
-import {
-  ProductsHeading,
-  ProductsInfo,
-  ProductsTitle,
-} from "./components/Products/ProductsElements";
 import SentencePage from "./components/Sentence/SentencePage";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { GlobalStyle } from "./globalStyles";
@@ -146,8 +147,8 @@ function App() {
       <div
         style={{
           position: "fixed",
-          bottom: "20px",
-          right: "20px",
+          bottom: "3rem",
+          right: "3rem",
           width: "6vh",
           height: "6vh",
           borderRadius: "3vh",
@@ -171,40 +172,43 @@ function App() {
         >
           <FontAwesomeIcon
             icon={faWhatsapp}
-            style={{ fontSize: "3vh", marginTop: "0.5vh", color: "white" }}
+            style={{ fontSize: "3vh", marginTop: "0.3vh", color: "white" }}
           />
         </a>
-        {/* <FaWhatsapp /> */}
-        {/* </SocialIconLink> */}
       </div>
       <div id="mainContainer">
-        <SentencePage>
+        {/** SEI PRONTO? */}
+        <SentencePage noWholeWindow={true}>
           <div
             style={{
               display: "flex",
               flexDirection: "column",
             }}
           >
-            <ProductsHeading>Sei pronto?</ProductsHeading>
-            Che tu voglia migliorare forza e massa muscolare
-            <br />
-            <br />
-            Che tu voglia scoprire cosa è il calisthencis
-            <br />
-            <br />
-            Che tu voglia semplicemente tenerti in forma
-            <br />
-            <br />
-            e raggiungere i tuoi traguardi
-            <br />
-            <br />
-            <ProductsTitle>
+            <HeroH1NoAnim>Sei pronto?</HeroH1NoAnim>
+            <HeroP>
+              Che tu voglia migliorare{" "}
+              <span style={{ color: "rgb(227,24,55)" }}>
+                forza e massa muscolare
+              </span>
+              <br />
+              Che tu voglia scoprire cosa è il{" "}
+              <span style={{ color: "rgb(227,24,55)" }}>Calisthenics</span>
+              <br />
+              Che tu voglia semplicemente{" "}
+              <span style={{ color: "rgb(227,24,55)" }}>tenerti in forma</span>
+              <br />e raggiungere i tuoi{" "}
+              <span style={{ color: "rgb(227,24,55)" }}>traguardi</span>
+              <br />
+            </HeroP>
+            <HeroH1NoAnim fontSize="clamp(3rem, 10vw,4rem)">
               Sei nel posto giusto, devi solo{" "}
               <span style={{ color: "rgb(227,24,55)" }}>iniziare!</span>
-            </ProductsTitle>
+            </HeroH1NoAnim>
           </div>
         </SentencePage>
 
+        {/** CHI SONO */}
         <PhotoPage id="chisono" img={chiSono}>
           <div
             style={{
@@ -212,10 +216,10 @@ function App() {
               flexDirection: "column",
             }}
           >
-            <HeroH2 textAlign="right">CHI SONO</HeroH2>
-            <ProductsInfo textAlign="right">
+            <HeroH1 textAlign="right">CHI SONO</HeroH1>
+            <HeroP textAlign="right">
               Mi chiamo Manuel Roberto, e per me il Calisthenics va oltre il
-              semplice allenamento.Ho iniziato ad allenarmi al parchetto ai
+              semplice allenamento. Ho iniziato ad allenarmi al parchetto ai
               tempi dell'università perchè non potevo permettermi una palestra e
               da quel momento non mi sono più fermato. Il calisthenics è una
               disciplima, un modo di connettersi con il proprio corpo, di
@@ -234,9 +238,11 @@ function App() {
               consigli personalizzati sulla dieta, sull'equilibrio nutrizionale
               e sull'uso di integratori, in modo da massimizzare i tuoi
               risultati e prenderti cura del tuo benessere generale.
-            </ProductsInfo>
+            </HeroP>
           </div>
         </PhotoPage>
+
+        {/** ALLENATI CON ME */}
         <SentencePage id="coaching">
           <div
             style={{
@@ -245,26 +251,25 @@ function App() {
               flexDirection: "column",
             }}
           >
-            <ProductsHeading marginBottom={"0rem"}>
-              Allenati con me!
-            </ProductsHeading>
-            <ProductsTitle>
+            <HeroH1NoAnim>Allenati con me!</HeroH1NoAnim>
+            <HeroH1NoAnim fontSize="clamp(3rem, 10vw,2rem)">
               Scopri il mio servizio di{" "}
               <span style={{ color: "rgb(227,24,55)" }}>COACHING ONLINE</span>
-            </ProductsTitle>
-            <br />
-            <br />
-            Il mio lavoro è spingerti a migliorare quotidianamente, trovare il
-            giusto equilibrio nell'allenamento adatto a te e alle tue esigenze.
-            Il mio servizio di coaching online ti offre la flessibilità di
-            allenarti ovunque tu sia, godendo di una guida personalizzata e di
-            un sostegno costante. Potrai contare su di me per fornirti feedback,
-            rispondere alle tue domande e offrire motivazione a distanza. Che tu
-            sia in viaggio, a casa o in una palestra locale, il coaching online
-            ti permette di continuare il tuo percorso di allenamento con la
-            stessa dedizione e professionalità. Scegliendo il coaching online,
-            avrai l'opportunità di ottenere risultati straordinari con la
-            flessibilità che si adatta al tuo stile di vita.
+            </HeroH1NoAnim>
+            <HeroP>
+              Il mio lavoro è spingerti a migliorare quotidianamente, trovare il
+              giusto equilibrio nell'allenamento adatto a te e alle tue
+              esigenze. Il mio servizio di coaching online ti offre la
+              flessibilità di allenarti ovunque tu sia, godendo di una guida
+              personalizzata e di un sostegno costante. Potrai contare su di me
+              per fornirti feedback, rispondere alle tue domande e offrire
+              motivazione a distanza. Che tu sia in viaggio, a casa o in una
+              palestra locale, il coaching online ti permette di continuare il
+              tuo percorso di allenamento con la stessa dedizione e
+              professionalità. Scegliendo il coaching online, avrai
+              l'opportunità di ottenere risultati straordinari con la
+              flessibilità che si adatta al tuo stile di vita.
+            </HeroP>
             <Products heading="Coaching" data={onlineCoaching} />
             {/* Per questo puoi
             allenarti con me in presenza sia partecipando a uno dei miei corsi
@@ -272,11 +277,12 @@ function App() {
             affidarti al mio servizio di coaching online. */}
           </div>
         </SentencePage>
+        {/** IN PRESENZA */}
         <PhotoPage left img={corsiInPresenza}>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <HeroH2 textAlign="left">CORSI IN PRESENZA</HeroH2>
 
-            <ProductsInfo textAlign="left">
+            <HeroP textAlign="left">
               <span>
                 Se invece sei quel tipo di persona che preferisce allenarsi di
                 persona, puoi trovare i miei corsi in presenza presso la
@@ -306,14 +312,15 @@ function App() {
                 i corsi in presenza si adattano al tuo livello. Scegli la sede
                 che ti è più comoda e inizia il tuo percorso!
               </span>
-            </ProductsInfo>
+            </HeroP>
           </div>
         </PhotoPage>
+        {/** PERSONAL */}
         <PhotoPage right img={sedutePersonal}>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <HeroH2 textAlign="right">SEDUTE DI PERSONAL</HeroH2>
 
-            <ProductsInfo textAlign="right">
+            <HeroP textAlign="right">
               Le sessioni di personal training dedicate sono un'esperienza di
               allenamento su misura, in cui sarai seguito esclusivamente da me.
               Avrai feedback personalizzati, una maggiore attenzione ai dettagli
@@ -321,51 +328,35 @@ function App() {
               tua scheda. Le sessioni di personal training dedicate possono
               essere svolte ovunque tu preferisca, sia in una delle palestre in
               cui alleno che nella tua palestra di fiducia.
-            </ProductsInfo>
+            </HeroP>
           </div>
         </PhotoPage>
+
+        {/** STORIE DI SUCCESSO */}
         <SentencePage noWholeWindow={true} id="successo">
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <ProductsHeading>Storie di successo</ProductsHeading>
-            Sono molto soddisfatto dei risultati che raggiungono i miei alievi.
-            Sono qui per trasmettere agli altri la mia passione e per aiutarli a
-            superarsi quotidianamente. Questi sono solo alcuni dei percorsi di
-            cui mi ritengo fiero.
+            <HeroH1NoAnim>Storie di successo</HeroH1NoAnim>
+            <HeroP>
+              Sono molto soddisfatto dei risultati che raggiungono i miei
+              alievi. Sono qui per trasmettere agli altri la mia passione e per
+              aiutarli a superarsi quotidianamente. Questi sono solo alcuni dei
+              percorsi di cui mi ritengo fiero.
+            </HeroP>
           </div>
         </SentencePage>
         <SentencePage id="gallery">
           <VideoGallery />
         </SentencePage>
+        {/** DICONO DI ME */}
         <SentencePage id="diconoDiMe">
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <ProductsHeading marginBottom={"1rem"}>
-              Dicono di me
-            </ProductsHeading>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <HeroH1NoAnim>Dicono di me</HeroH1NoAnim>
             <SliderMenu />
-
-            {/* <Carousel
-              showArrows={false}
-              infiniteLoop={true}
-              showThumbs={false}
-              showStatus={false}
-              autoPlay={true}
-              interval={6100}
-            >
-              {aboutMe.map((x) => (
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    paddingBottom: "5rem",
-                    flexDirection: "row",
-                    height: "100%",
-                  }}
-                >
-                  <img style={{ width: "60%", borderRadius: "2rem" }} src={x} />
-                </div>
-              ))}
-            </Carousel> */}
           </div>
         </SentencePage>
       </div>

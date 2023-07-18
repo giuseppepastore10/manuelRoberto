@@ -2,27 +2,22 @@ import React from 'react';
 import {
 	FaFacebook,
 	FaInstagram,
-	FaYoutube,
-	FaTwitter,
-	FaLinkedin,
-	FaWhatsapp,
+	FaWhatsapp
 } from 'react-icons/fa';
 import {
-	FooterContainer,
 	FooterWrap,
-	SocialMedia,
-	SocialMediaWrap,
-	SocialLogo,
-	SocialIcons,
 	SocialIconLink,
-	FooterPrivacy,
+	SocialIcons,
+	SocialLogo,
+	SocialMedia,
+	SocialMediaWrap
 } from './FooterElements';
 
 function Footer() {
 	return (
-		<FooterContainer>
+		
 			<FooterWrap>
-				<SocialMedia>
+				
 					<SocialMediaWrap>
 						<SocialLogo to='/'>Manuel Roberto</SocialLogo>
 						
@@ -32,6 +27,7 @@ function Footer() {
 								target='_blank'
 								aria-label='Facebook'
 								rel='noopener noreferrer'
+								fontSize="2.5rem"
 							>
 								<FaFacebook />
 							</SocialIconLink>
@@ -41,6 +37,7 @@ function Footer() {
 								target='_blank'
 								aria-label='Instagram'
 								rel='noopener noreferrer'
+								fontSize="2.5rem"
 							>
 								<FaInstagram />
 							</SocialIconLink>
@@ -49,6 +46,7 @@ function Footer() {
 								target='_blank'
 								aria-label='Whatsapp'
 								rel='noopener noreferrer'
+								fontSize="2.5rem"
 							>
 								<FaWhatsapp />
 							</SocialIconLink>
@@ -60,7 +58,7 @@ function Footer() {
 									target='_blank'
 									aria-label='Facebook'
 									rel='noopener noreferrer'
-									fontSize="8px"
+									
 								>
 								Termini e condizioni
 								</SocialIconLink>
@@ -69,7 +67,6 @@ function Footer() {
 									target='_blank'
 									aria-label='Facebook'
 									rel='noopener noreferrer'
-									fontSize="8px"
 								>
 								Privacy policy
 								</SocialIconLink>
@@ -78,15 +75,14 @@ function Footer() {
 									target='_blank'
 									aria-label='Facebook'
 									rel='noopener noreferrer'
-									fontSize="8px"
+									
 								>
 								Cookie policy
 								</SocialIconLink>
 						</SocialIcons>
 					</SocialMediaWrap>
-				</SocialMedia>
+				
 			</FooterWrap>
-		</FooterContainer>
 	);
 }
 

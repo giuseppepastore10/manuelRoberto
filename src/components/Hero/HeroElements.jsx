@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import copertina from '../../images/main/copertina.jpg';
+import copertina from '../../images/main/copertina.png';
 
 export const HeroContainer = styled.div`
 	background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
@@ -7,47 +7,37 @@ export const HeroContainer = styled.div`
 	height: 100vh;
 	background-position: center top;
 	background-size: cover;
-	padding-top: 100px;
-
-	@media screen and (min-width: 650px) {
-		background-position: right top; /* Impostato su "right" per mantenere l'immagine sulla destra */
-		background-repeat: no-repeat; /* Impostato su "no-repeat" per evitare la ripetizione dell'immagine */
-		background-color: black; /* Impostato il colore di sfondo a nero */
-		background-size: auto;
-	}
-`;
-
-export const HeroContent = styled.div`
-	height: calc(100vh-80px);
-	max-height: 100%;
-	/* width: 100vw; */
-	padding: 0rem calc((100vw - 1300px) / 2);
+	margin-top: -7rem;
 	
-	display: flex;
-	justify-content: right;
+	// @media screen and (min-width: 650px) {
+	// 	background-position: right top; /* Impostato su "right" per mantenere l'immagine sulla destra */
+	// 	background-repeat: no-repeat; /* Impostato su "no-repeat" per evitare la ripetizione dell'immagine */
+	// 	background-color: black; /* Impostato il colore di sfondo a nero */
+	// 	background-size: auto;
+	// }
 `;
+
+
 
 export const HeroItems = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
+	
 	height: 100vh;
 	max-height: 100%;
-	padding: 0 2rem;
-	width: 650px;
+	padding: 0 3rem;
+	width: 80%; 
 	color: #fff;
-	text-transform: uppercase;
-	line-height: 1;
+	
+	line-height: 2;
 	font-weight: bold;
 
-	
-	
-
-	@media screen and (min-width: 650px) {
-		width: 100%;
-		align-items: flex-start;
-	}
+	// @media screen and (min-width: 650px) {
+	// 	width: 100%;
+	// 	align-items: flex-start;
+	// }
 `;
 
 const fadeIn = keyframes`
@@ -62,31 +52,54 @@ const fadeIn = keyframes`
 `;
 
 export const HeroH1 = styled.h1`
-	font-size: clamp(2.5rem, 10vw, 5rem);
-	margin-bottom: 1rem;
+	font-size: clamp(3rem, 10vw, 10rem);
+	margin-bottom: 3rem;
 	box-shadow: 3px 5px #e9ba23;
-	letter-spacing: 3px;
-	opacity: 0;
+	letter-spacing: 0.5rem;
+	padding: 2rem;
+	text-align: ${props => props.textAlign || ''};
 	animation: ${fadeIn} 1s ease-in-out forwards;
 	animation-delay: 0.25s;
+
+
 	
+`;
+
+export const HeroH1NoAnim = styled.h1`
+	font-size: ${props=>props.fontSize?props.fontSize:"clamp(3rem, 10vw,8rem);"};
+	margin-bottom: 3rem;
+	padding: 2rem;
+	letter-spacing: 0.5rem;
+
 `;
 
 
 export const HeroH2 = styled.p`
-	font-size: clamp(4rem, 15vw, 10rem);
 	box-shadow: ${props => props.textAlign === 'left' ? "-3px 5px #e9ba23" : "3px 5px #e9ba23"};
-	letter-spacing: 5px;
-	padding: 1rem;
-	text-align: ${props => props.textAlign || 'left'};
+	padding: 2rem;
+	
+
+	font-size: clamp(3rem, 5vw, 5rem);
+	margin-bottom: 3rem;
+	
+	letter-spacing: 0.5rem;
+	text-align: ${props => props.textAlign || ''};
+
 
 `;
 
 export const HeroVideo = styled.p`
 	
-	min-height: 10vw;
-	max-width: 20rem;
-	text-align: ${props => props.textAlign || 'center'};
+padding: 2rem;
+
+@media screen and (min-width: 1000px) {
+	min-height: 15vw;
+	 }
+
+
+font-size: clamp(2rem, 5vw, 2rem);
+
+text-align: ${props => props.textAlign || ''};
 
 	
 
@@ -104,20 +117,23 @@ export const PlaceLink = styled.a`
 
 
 export const HeroP = styled.p`
-	font-size: clamp(2rem, 2.5vw, 3rem);
-	margin-bottom: 2rem;
+	font-size: clamp(2rem, 8vw, 2rem);
+	margin-bottom: 3rem;
 	opacity: 0;
 	animation: ${fadeIn} 1s ease-in-out forwards;
 	animation-delay: 0.5s;
+	font-family: sans-serif;
+	color: #949494;
 
+	text-align: ${props => props.textAlign || ''};
 	@media screen and (max-width: 650px) {
-		font-size: clamp(1.4rem, 2vw, 3rem);
-		text-align: center;
+		font-size: clamp(3rem, 8vw, 2rem);
+		
 	}
 `;
 
 export const HeroBtn = styled.button`
-	font-size: 1.4rem;
+	font-size: clamp(2rem, 10vw, 2rem);
 	padding: 1rem 4rem;
 	border: none;
 	background: #e31837;
@@ -127,6 +143,11 @@ export const HeroBtn = styled.button`
 	animation: ${fadeIn} 1s ease-in-out forwards;
 	animation-delay: 1s;
 	border-radius: 10rem;
+
+	@media screen and (max-width: 650px) {
+		font-size: clamp(3rem, 8vw, 2rem);
+		
+	}
 
 	&:hover {
 		background: #ffc500;

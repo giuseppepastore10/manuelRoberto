@@ -16,13 +16,13 @@ function Hero(props) {
 	return (
 		<HeroContainer>
 			
-			<HeroContent>
+			
 				<HeroItems>
-					<HeroH1>Allenati!  &nbsp;</HeroH1>
-					<HeroP>Ottieni un fisico forte ed estetico tramite il Calisthenics.</HeroP>
-					<HeroBtn onClick={props.onBook}>Contattami</HeroBtn>
+					<HeroH1>ALLENATI!  &nbsp;</HeroH1>
+					<HeroP><span style={{color: "white"}}>Ottieni un fisico forte ed estetico tramite il Calisthenics.</span></HeroP>
+					<HeroBtn onClick={props.onBook}>CONTATTAMI</HeroBtn>
 				</HeroItems>
-			</HeroContent>
+			
 		</HeroContainer>
 	);
 }

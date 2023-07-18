@@ -1,15 +1,13 @@
 import React from 'react';
-import {
-	SidebarContainer,
-	Icon,
-	CloseIcon,
-	SidebarMenu,
-	SidebarLink,
-	SideBtnWrap,
-	SidebarRoute,
-} from './SideBarElements';
 import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import { SocialIconLink, SocialIcons } from '../Footer/FooterElements';
+import { SocialIconLink } from '../Footer/FooterElements';
+import {
+	CloseIcon,
+	Icon,
+	SidebarContainer,
+	SidebarLink,
+	SidebarMenu
+} from './SideBarElements';
 
 function Sidebar({ isOpen, toggle }) {
 	return (
@@ -29,6 +27,7 @@ function Sidebar({ isOpen, toggle }) {
 								target='_blank'
 								aria-label='Facebook'
 								rel='noopener noreferrer'
+								fontSize="2.5rem"
 							>
 								<FaFacebook color="black" />
 							</SocialIconLink>
@@ -38,6 +37,7 @@ function Sidebar({ isOpen, toggle }) {
 								target='_blank'
 								aria-label='Instagram'
 								rel='noopener noreferrer'
+								fontSize="2.5rem"
 							>
 								<FaInstagram color="black" />
 							</SocialIconLink>
@@ -46,6 +46,7 @@ function Sidebar({ isOpen, toggle }) {
 								target='_blank'
 								aria-label='Whatsapp'
 								rel='noopener noreferrer'
+								fontSize="2.5rem"
 							>
 								<FaWhatsapp color="black" />
 							</SocialIconLink>
