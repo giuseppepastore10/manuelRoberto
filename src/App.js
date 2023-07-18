@@ -66,7 +66,7 @@ const images = [
 ];
 
 const whatsappLink =
-  "https://api.whatsapp.com/send?phone=3318479926&text=Ciao Manuel, vorrei prenotare una chiamata conoscitiva con te. Quando saresti disponibile?";
+  "https://api.whatsapp.com/send?phone=3318479926&text=Ciao Manuel, vorrei prenotare una chiamata conoscitiva gratuita con te. Quando saresti disponibile?";
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -149,9 +149,9 @@ function App() {
           position: "fixed",
           bottom: "3rem",
           right: "3rem",
-          width: "6vh",
-          height: "6vh",
-          borderRadius: "3vh",
+          width: "8vh",
+          height: "8vh",
+          borderRadius: "4vh",
           backgroundColor: "green",
           boxShadow: "0 2px 5px rgba(0, 0, 0, 0.3)",
           display: "flex",
