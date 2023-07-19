@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const SidebarContainer = styled.aside`
 	position: fixed;
 	z-index: 999;
-	width: 30%;
+	width: 50vw;
 	height: 100%;
 	background: #ffc500;
 	display: grid;
@@ -14,7 +14,7 @@ export const SidebarContainer = styled.aside`
 	transition: 0.3s ease-in-out;
 	right: ${({ isOpen }) => (isOpen ? '0' : '-10000px')};
 
-	@media screen and (max-width: 400px) {
+	@media screen and (max-width: 650px) {
 		width: 100vw;
 		right: ${({ isOpen }) => (isOpen ? '0' : '-1000px')};
 	}
@@ -55,9 +55,8 @@ export const SidebarLink = styled.a`
 	align-items: center;
 	justify-content: center;
 	font-size: 2.5rem;
-	@media screen and (max-width: 400px) {
-		font-size: 6rem;
-	}
+	font-size: clamp(1rem, 8vw, 1.8rem);
+	
 	text-decoration: none;
 	list-style: none;
 	transition: 0.2s ease-in-out;

@@ -50,6 +50,7 @@ import SliderMenu from "./components/Review/SliderMenu";
 import VideoGallery from "./components/VideoGallery/VideoGallery";
 
 import ResponsiveGallery from "react-responsive-gallery";
+import Popup from "./components/Popup/Popup";
 
 const images = [
   uno,
@@ -95,8 +96,10 @@ function App() {
         document.documentElement.scrollTop ||
         document.body.scrollTop;
 
+      const totalHeight = document.documentElement.scrollHeight - windowHeight;
+
       // Verifica se l'utente ha scrollato la pagina di una quantità pari all'altezza della pagina
-      if (scrollY >= windowHeight * 0.6) {
+      if (scrollY >= windowHeight * 0.6 && scrollY < totalHeight * 0.995) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -146,38 +149,7 @@ function App() {
       <div style={{ marginTop: "-80px" }}>
         <Hero onBook={handleClick} />
       </div>
-      <div
-        style={{
-          position: "fixed",
-          bottom: "3rem",
-          right: "3rem",
-          width: "8vh",
-          height: "8vh",
-          borderRadius: "4vh",
-          backgroundColor: "green",
-          boxShadow: "0 2px 5px rgba(0, 0, 0, 0.3)",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          cursor: "pointer",
-          opacity: isScrolled ? 1 : 0,
-          transition: "opacity 0.3s ease",
-          zIndex: 999,
-          transform: isScrolled ? "translateY(0)" : "translateY(10px)",
-        }}
-      >
-        <a
-          href={whatsappLink}
-          target="_blank"
-          aria-label="Whatsapp"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon
-            icon={faWhatsapp}
-            style={{ fontSize: "3vh", marginTop: "0.3vh", color: "white" }}
-          />
-        </a>
-      </div>
+      <Popup isScrolled={isScrolled} link={whatsappLink} />
       <div id="mainContainer">
         {/** SEI PRONTO? */}
         <SentencePage noWholeWindow={true}>
@@ -248,6 +220,7 @@ function App() {
             style={{
               display: "flex",
 
+              width: "100%",
               flexDirection: "column",
             }}
           >
@@ -279,7 +252,9 @@ function App() {
         </SentencePage>
         {/** IN PRESENZA */}
         <PhotoPage left img={corsiInPresenza}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", width: "100%" }}
+          >
             <HeroH2 textAlign="left">CORSI IN PRESENZA</HeroH2>
 
             <HeroP textAlign="left">
@@ -317,7 +292,9 @@ function App() {
         </PhotoPage>
         {/** PERSONAL */}
         <PhotoPage right img={sedutePersonal}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", width: "100%" }}
+          >
             <HeroH2 textAlign="right">SEDUTE DI PERSONAL</HeroH2>
 
             <HeroP textAlign="right">
@@ -333,7 +310,9 @@ function App() {
         </PhotoPage>
         {/** STORIE DI SUCCESSO */}
         <SentencePage noWholeWindow={true} id="successo">
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", width: "100%" }}
+          >
             <HeroH1NoAnim>Storie di successo</HeroH1NoAnim>
             <HeroP>
               Sono molto soddisfatto dei risultati che raggiungono i miei
@@ -362,7 +341,7 @@ function App() {
         <SentencePage noWholeWindow={true} id="gallery">
           <div style={{ display: "flex", flexDirection: "column" }}>
             <HeroH1NoAnim>Gallery</HeroH1NoAnim>
-            <ResponsiveGallery images={images.map((x) => ({ src: x }))} />,
+            <ResponsiveGallery images={images.map((x) => ({ src: x }))} />
           </div>
         </SentencePage>
       </div>

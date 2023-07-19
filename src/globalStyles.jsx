@@ -10,11 +10,11 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     html {
-        font-size: 1vw;
+        font-size: 16px;
     }
 
     #mainContainer{
-        padding: 3rem;
+        padding: 10vw;
         overflow-x: hidden;
         background: #000;
 

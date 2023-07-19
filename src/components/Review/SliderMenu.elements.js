@@ -40,22 +40,23 @@ export const SliderName = styled.h3`
   padding: 0;
   margin-bottom: 0.3rem;
 
-  @media screen and (max-width: 650px) {
-    font-size: clamp(3rem, 8vw, 3rem);
-  }
+  // COMMENTED
+  // @media screen and (max-width: 650px) {
+  //   font-size: clamp(3rem, 8vw, 3rem);
+  // }
 `;
 
 export const SliderDescription = styled.p`
   color: #949494;
-  font-size: clamp(2.5rem, 10vw, 2rem);
+  font-size: clamp(1rem, 8vw, 1.8rem);
   width: 70%;
   overflow: hidden;
   margin: auto;
   margin-top: 2rem;
   font-family: sans-serif;
 
-  @media screen and (max-width: 650px) {
-    font-size: clamp(5rem, 8vw, 3rem);
+  @media screen and (max-width: 1200px) {
+    font-size: clamp(1rem, 8vw, 1rem);
     width: 100%;
   }
 `;

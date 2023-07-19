@@ -18,7 +18,7 @@ function Hero(props) {
 			
 			
 				<HeroItems>
-					<HeroH1>ALLENATI!  &nbsp;</HeroH1>
+					<HeroH1>ALLENATI!</HeroH1>
 					<HeroP><span style={{color: "white"}}>Ottieni un fisico forte ed estetico tramite il Calisthenics.</span></HeroP>
 					<HeroBtn onClick={props.onBook}>CONTATTAMI</HeroBtn>
 				</HeroItems>

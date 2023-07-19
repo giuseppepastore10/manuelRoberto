@@ -70,7 +70,7 @@ function VideoGallery() {
         <div
           className="video-c"
           style={{
-            width: !vertical ? "26vw" : "70vw",
+            width: !vertical ? "23vw" : "70vw",
           }}
           key={index + "2"}
         >

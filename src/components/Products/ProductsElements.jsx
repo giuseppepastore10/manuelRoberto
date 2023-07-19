@@ -34,9 +34,10 @@ export const ProductsHeading = styled.h1`
 	text-align: center;
 	margin-bottom: ${props => props.marginBottom || '3rem'};
 
-	@media screen and (max-width: 600px) {
-		font-size: clamp(2rem, 2.5vw, 2rem);
-	  }
+	// COMMENTED
+	// @media screen and (max-width: 600px) {
+	// 	font-size: clamp(2rem, 2.5vw, 2rem);
+	//   }
 `;
 
 export const ProductsTitle = styled.h2`
@@ -55,13 +56,14 @@ export const ProductIconContainer = styled.div`
 export const ProductIcon = styled.span`
 font-size: clamp(2rem, 8vw, 2rem);
 
-padding: 6rem;
+padding: 3rem;
 
 
 @media screen and (max-width: 650px) {
-	font-size: clamp(3rem, 8vw, 3rem);
-	margin-top: 5rem;
-	margin-bottom: 5rem;
+	font-size: clamp(1rem, 8vw, 1rem);
+	padding: 0;
+	// margin-top: 5rem;
+	// margin-bottom: 5rem;
 
 	
 }
@@ -81,7 +83,7 @@ export const ProductsInfo = styled.div`
 	white-space: ${props => props.wSpace || 'normal'}; 
 
 	@media screen and (max-width: 1200px) {
-		min-height: ${props => props.zeroMargin? '0':"8rem"};
+		// COMMENTED min-height: ${props => props.zeroMargin? '0':"8rem"};
 	  }
 `;
 
@@ -96,7 +98,7 @@ export const ProductsInfoVideo = styled.div`
 	text-align: ${props => props.textAlign || 'center'};
 
 	@media screen and (max-width: 1200px) {
-		min-height: ${props => props.zeroMargin? '0':"8rem"};
+		// COMMENTE min-height: ${props => props.zeroMargin? '0':"8rem"};
 	  }
 
 	

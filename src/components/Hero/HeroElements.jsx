@@ -23,21 +23,21 @@ export const HeroItems = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: center;
 	
 	height: 100vh;
 	max-height: 100%;
 	padding: 0 3rem;
-	width: 80%; 
+	width: 100%; 
 	color: #fff;
-	
+
 	line-height: 2;
 	font-weight: bold;
 
-	// @media screen and (min-width: 650px) {
-	// 	width: 100%;
-	// 	align-items: flex-start;
-	// }
+	@media screen and (min-width: 650px) {
+		width: 100%;
+		align-items: flex-start;
+	}
 `;
 
 const fadeIn = keyframes`
@@ -56,10 +56,15 @@ export const HeroH1 = styled.h1`
 	margin-bottom: 3rem;
 	box-shadow: 3px 5px #e9ba23;
 	letter-spacing: 0.5rem;
-	padding: 2rem;
+	
 	text-align: ${props => props.textAlign || ''};
 	animation: ${fadeIn} 1s ease-in-out forwards;
 	animation-delay: 0.25s;
+
+	@media screen and (max-width: 650px) {
+		font-size: clamp(2rem, 8vw, 2rem);
+		
+	}
 
 
 	
@@ -68,11 +73,12 @@ export const HeroH1 = styled.h1`
 export const HeroH1NoAnim = styled.h1`
 	font-size: ${props=>props.fontSize?props.fontSize:"clamp(3rem, 10vw,8rem);"};
 	margin-bottom: 3rem;
-	padding: 2rem;
+	
 	letter-spacing: 0.5rem;
 
+	// COMMENTED
 	@media screen and (max-width: 650px) {
-		font-size: ${props=>props.fontSize?"clamp(5rem, 8vw, 3rem);":"clamp(8rem, 8vw, 3rem);"};
+		font-size: ${props=>props.fontSize?"clamp(2rem, 8vw, 3rem);":"clamp(3rem, 8vw, 3rem);"};
 		
 	}
 
@@ -90,6 +96,11 @@ export const HeroH2 = styled.p`
 	letter-spacing: 0.5rem;
 	text-align: ${props => props.textAlign || ''};
 
+	@media screen and (max-width: 650px) {
+		font-size: clamp(2rem, 8vw, 2rem);
+		
+	}
+
 
 `;
 
@@ -104,8 +115,9 @@ padding: 2rem;
 
 font-size: clamp(2rem, 5vw, 2rem);
 
+// COMMENTED
 @media screen and (max-width: 650px) {
-	font-size: ${props=>props.fontSize?"clamp(5rem, 8vw, 3rem);":"clamp(8rem, 8vw, 3rem);"};
+	font-size: ${props=>props.fontSize?"clamp(2rem, 8vw, 3rem);":"clamp(2rem, 8vw, 2rem);"};
 	
 }
 
@@ -127,7 +139,7 @@ export const PlaceLink = styled.a`
 
 
 export const HeroP = styled.p`
-	font-size: clamp(2rem, 8vw, 2rem);
+	font-size: clamp(1rem, 8vw, 1.8rem);
 	margin-bottom: 3rem;
 	opacity: 0;
 	animation: ${fadeIn} 1s ease-in-out forwards;
@@ -136,8 +148,11 @@ export const HeroP = styled.p`
 	color: #949494;
 
 	text-align: ${props => props.textAlign || ''};
+	
+	// COMMENTED
 	@media screen and (max-width: 650px) {
-		font-size: clamp(5rem, 8vw, 3rem);
+		font-size: clamp(1rem, 8vw, 1.5rem);
+		text-align: center;
 		
 	}
 `;
@@ -154,8 +169,9 @@ export const HeroBtn = styled.button`
 	animation-delay: 1s;
 	border-radius: 10rem;
 
+	// COMMENTED
 	@media screen and (max-width: 650px) {
-		font-size: clamp(5rem, 8vw, 2rem);
+		font-size: clamp(1rem, 8vw, 1rem);
 		
 	}
 

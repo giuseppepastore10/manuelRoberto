@@ -34,8 +34,9 @@ display: flex;
 color: #fff;
 text-align: center;
 min-height: 100vh;
-padding: 3rem;
 
+padding-top: 5rem;
+padding-bottom: 5rem;
 
 
 	h1 {

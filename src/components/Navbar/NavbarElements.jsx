@@ -22,37 +22,42 @@ justify-content: space-between;
 align-items: center;
 width:100%;
 flex-direction: row;
-padding: 1vh 3rem;
+padding: 1vh 10vw;
 
 `;
 
 
 export const NavLink = styled(Link)`
 	color: #fff;
-	font-size: ${props => props.fontSize || 'clamp(1.5rem, 10vw, 4rem);'};
+	font-size: clamp(1rem, 8vw, 1.8rem);
 	
 	display: flex;
 	
 	text-decoration: none;
 	cursor: pointer;
 	
-	@media screen and (min-width: 900px) {
-		font-size: ${props => props.fontSize || 'clamp(2rem, 10vw, 1.5rem);'};
-	  }
+	// COMMENTED
+	@media screen and (max-width: 650px) {
+		font-size: clamp(1rem, 8vw, 1.5rem);
+
+		
+	}
 
 	
 `;
 
 export const NavIcon = styled.div`
 	
-	font-size: ${props => props.fontSize || 'clamp(2.5rem, 10vw, 1.5rem);'};
+font-size: clamp(1rem, 8vw, 1.8rem);
 
 	cursor: pointer;
 	color: #fff;
 
-	@media screen and (min-width: 900px) {
-		font-size: ${props => props.fontSize || 'clamp(1.5rem, 10vw, 1.5rem);'};
-	  }
+	@media screen and (max-width: 650px) {
+		font-size: clamp(1rem, 8vw, 1rem);
+		font-weight: 300;
+		
+	}
 
 `;
 

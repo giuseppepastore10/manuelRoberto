@@ -10,7 +10,8 @@ import {
 	SocialIcons,
 	SocialLogo,
 	SocialMedia,
-	SocialMediaWrap
+	SocialMediaWrap,
+	SocialTextLink
 } from './FooterElements';
 
 function Footer() {
@@ -27,7 +28,7 @@ function Footer() {
 								target='_blank'
 								aria-label='Facebook'
 								rel='noopener noreferrer'
-								fontSize="2.5rem"
+								
 							>
 								<FaFacebook />
 							</SocialIconLink>
@@ -37,7 +38,7 @@ function Footer() {
 								target='_blank'
 								aria-label='Instagram'
 								rel='noopener noreferrer'
-								fontSize="2.5rem"
+								
 							>
 								<FaInstagram />
 							</SocialIconLink>
@@ -46,39 +47,42 @@ function Footer() {
 								target='_blank'
 								aria-label='Whatsapp'
 								rel='noopener noreferrer'
-								fontSize="2.5rem"
+								
 							>
 								<FaWhatsapp />
 							</SocialIconLink>
 							
 						</SocialIcons>
 						<SocialIcons>
-							<SocialIconLink
+							<SocialTextLink
 									href='https://www.facebook.com/manuel.roberto.22'
 									target='_blank'
 									aria-label='Facebook'
 									rel='noopener noreferrer'
+									
 									
 								>
 								Termini e condizioni
-								</SocialIconLink>
-								<SocialIconLink
-									href='https://www.facebook.com/manuel.roberto.22'
-									target='_blank'
-									aria-label='Facebook'
-									rel='noopener noreferrer'
-								>
-								Privacy policy
-								</SocialIconLink>
-								<SocialIconLink
+								</SocialTextLink>
+								<SocialTextLink
 									href='https://www.facebook.com/manuel.roberto.22'
 									target='_blank'
 									aria-label='Facebook'
 									rel='noopener noreferrer'
 									
 								>
+								Privacy policy
+								</SocialTextLink>
+								<SocialTextLink
+									href='https://www.facebook.com/manuel.roberto.22'
+									target='_blank'
+									aria-label='Facebook'
+									rel='noopener noreferrer'
+									
+									
+								>
 								Cookie policy
-								</SocialIconLink>
+								</SocialTextLink>
 						</SocialIcons>
 					</SocialMediaWrap>
 				
