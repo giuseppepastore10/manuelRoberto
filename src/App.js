@@ -52,6 +52,10 @@ import VideoGallery from "./components/VideoGallery/VideoGallery";
 import ResponsiveGallery from "react-responsive-gallery";
 import Popup from "./components/Popup/Popup";
 
+import { successStoryQuery } from "./remote";
+
+console.log("hey:. ",successStoryQuery)
+
 const images = [
   uno,
   due,
@@ -74,6 +78,8 @@ const whatsappLink =
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const popupRef = useRef(null);
+
+  const [video,setVideo] = useState([]);
 
   const handleClick = () => {
     console.log("Popup ref: ", popupRef.current);
@@ -113,6 +119,46 @@ function App() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
+
+
+
+  useEffect(() => {
+    window
+      .fetch(`https://graphql.contentful.com/content/v1/spaces/u9v9jadw1k6y/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // Authenticate the request
+          Authorization: "Bearer H3HCme5nRiuncZYUcHDUwwHd7BuanfZUmTao1V67nXw",
+        },
+        // send the GraphQL query
+        body: JSON.stringify({ query: successStoryQuery }),
+      })
+      .then((response) => response.json())
+      .then(({ data, errors }) => {
+        if (errors) {
+          console.error(errors);
+        }
+
+        // rerender the entire component with new data
+        console.log("Data: ",data)
+
+
+        let v = data.successStoryCollection.items.map(x=>{
+          return (
+            {
+              video: x.video.url,
+              name: x.title,
+              main: x.title,
+              cover: x.cover,
+              desc: x.description,
+            }
+          )
+        })
+        setVideo(v)
+        //setPage(data.pageCollection.items[0]);
+      });
   }, []);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -275,13 +321,7 @@ function App() {
                 >
                   Grottaminarda (AV), via Osvaldo Sanini, 24
                 </PlaceLink>
-                , e Balance Studio Training ad{" "}
-                <PlaceLink
-                  target="_blank"
-                  href="https://goo.gl/maps/EmiuieUiffdHn5Jr8"
-                >
-                  Ariano Irpino (AV), via Serra, 10
-                </PlaceLink>
+                
                 . Sarò lì personalmente per seguirti durante le sessioni di
                 allenamento. Sia che tu sia un principiante o un atleta esperto,
                 i corsi in presenza si adattano al tuo livello. Scegli la sede
@@ -323,7 +363,7 @@ function App() {
           </div>
         </SentencePage>
         <SentencePage>
-          <VideoGallery />
+          <VideoGallery videos={video}/>
         </SentencePage>
         {/** DICONO DI ME */}
         <SentencePage id="diconoDiMe">

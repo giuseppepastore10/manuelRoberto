@@ -32,9 +32,10 @@ const videos = [
     desc: "Antonio ha iniziato ad allenarsi con me all'età di 35 anni nel gennaio del 2022. Dopo aver praticato una disciplina che non gli dava soddisfazione, ha intrapreso il percorso nel Calisthenics. Grazie a tanta tenacia e costanza negli allenamenti, sempre tenendo come riferimento il lavoro sugli esercizi base, oltre ai sorprendenti miglioramenti dal punto di vista estetico con una condizione invidiabile dai più, ha appreso schemi motori più avanzati simbolo del Calisthenics come: Planche, Handstand, Piegamenti in verticale libera, Back lever, Muscle up, Human flag, Doppie a 65 kg di dip in allenamento e tanto altro ancora...",
   },
 ];
-function VideoGallery() {
+function VideoGallery({videos}) {
   const videoRefs = useRef([]);
   const [vertical, setVertical] = useState(false);
+  
 
   useEffect(() => {
     const handleResize = () => {
